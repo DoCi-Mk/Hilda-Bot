@@ -137,7 +137,7 @@ module.exports = {
 
 
         const picembed = new MessageEmbed()
-        .setColor('RANDOM')
+        .setColor('#2f3136')
         .setAuthor('شـوهــر آیــنده شـما 👨')
         .setThumbnail(profzan)
         .addFields(

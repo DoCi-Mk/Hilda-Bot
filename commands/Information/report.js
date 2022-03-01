@@ -23,7 +23,7 @@ module.exports = {
     }
 
 
-    const reportchannel = client.channels.cache.get("911934635569721345");
+    const reportchannel = client.channels.cache.get("947802788342169600");
     const report = args.join(" ");
     if (!report) {
       return message.reply({ embeds: [

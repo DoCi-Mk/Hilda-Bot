@@ -31,7 +31,7 @@ run: async (client, message, args) => {
 
 
   let embed1 = new MessageEmbed()
-  .setColor("RANDOM")
+  .setColor("#2f3136")
   .setDescription(`> **فـــال شــماره :** : **(${number_random})**`)
   .addField(
     `**${emoji.Title} شـــعــر :**`,

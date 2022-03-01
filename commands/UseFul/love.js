@@ -49,7 +49,7 @@ module.exports = {
         const kissembed = new MessageEmbed()
         .setAuthor('درصــد عـشـق 💖' )
         .setDescription((`تو ${message.author.toString()} ` + ` **${pic}%** ` + user.toString() + " را دوســـت داری <a:779938360692047872:858651576704172094> "))
-        .setColor(`RANDOM`)
+        .setColor(`#2f3136`)
         .setFooter(message.guild.name, message.guild.iconURL({dynamic: true}))
         message.reply({
             embeds: [kissembed]

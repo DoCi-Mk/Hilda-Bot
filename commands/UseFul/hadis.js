@@ -26,7 +26,7 @@ run: async (client, message, args) => {
 
         let embed1 = new MessageEmbed()
         .setAuthor('ســخــن بــزرگــان 📚')
-        .setColor("RANDOM")
+        .setColor("#2f3136")
         .setDescription(`**\n${infoValue3}\n\n**`)
         .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))
         message.channel.send({ embeds: [embed1] })

@@ -27,7 +27,7 @@ run: async (client, message, args) => {
 
         let embed1 = new MessageEmbed()
         .setAuthor('آیا میـدانـسـتید ؟ 🧐')
-        .setColor("RANDOM")
+        .setColor("#2f3136")
         .setDescription(`**\n<:816216804962730004:862366006471032882> ${infoValue3}\n\n**`)
         .setTimestamp()
         .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))
