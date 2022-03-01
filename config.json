@@ -1,0 +1,9 @@
+{
+    "prefix": ">",
+    "version_bot": "3.0.0",
+    "owner": "500740143532212245",
+    "bot_avatar": "https://cdn.discordapp.com/attachments/947475748426493984/947887386715652257/hilda_Logo.png",
+    "support": "https://discord.gg/Ed2EHXunFA",
+    "vote": "https://top.gg/bot/856599103960907786/vote",
+    "botinvite": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=140693073600&scope=bot%20applications.commands"
+  }
