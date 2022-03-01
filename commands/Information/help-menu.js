@@ -8,7 +8,7 @@ const update = require('../../updatelog.json')
 module.exports = {
   name: 'help',
   category: 'info',
-  description: 'Say Help and All Commands',
+  description: 'تمام دستورات بات',
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
 

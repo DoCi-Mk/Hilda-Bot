@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name : 'ping',
     category : 'info',
-    description : 'Returns latency and API ping',
+    description : 'دریافت پینگ بات',
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
 

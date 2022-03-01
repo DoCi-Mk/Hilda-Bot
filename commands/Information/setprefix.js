@@ -6,6 +6,7 @@ const prefixSchema = require('../../models/prefix')
 module.exports = {
   name: 'setprefix',
   aliases: ["prefix"],
+  description: "مشخص کردن پریفیکس جدید برای سرور",
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
 

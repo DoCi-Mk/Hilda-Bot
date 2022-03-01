@@ -6,7 +6,7 @@ const Data = require('../../Data/boy-gif.json')
 module.exports = {
       name: "bgif",
       aliases: ['boygif'],
-      description: "Send A Random Profile",
+      description: "گـیـف پـروفایل پسـرونه",
       cooldown: 2,
       userPerms: [],
       clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],

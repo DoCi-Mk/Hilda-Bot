@@ -7,7 +7,7 @@ const prefixdb = require('../../models/prefix')
 
 module.exports = {
   name: "report",
-  description: "Report a bug",
+  description: "گزارش مشکل در بات",
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
   

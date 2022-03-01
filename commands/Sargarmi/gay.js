@@ -5,9 +5,7 @@ const config = require('../../config.json')
 module.exports = {
       name: "gay",
       aliases: ['gaysanj'],
-      description: "kisses a mentioned user",
-      usage: ">gay <Mention User>",
-      category: "فان و بازی",
+      description: "درصد گی بودن شما دوست عزیز",
       cooldown: 2,
       userPerms: [],
       clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
@@ -54,7 +52,7 @@ module.exports = {
         const kissembed = new MessageEmbed()
         .setAuthor('گِـــی 🏳️‍🌈')
         .setDescription((`** دوست عزیز شما ${pic}% گــی هستید ${emojies}**`))
-        .setColor(`RANDOM`)
+        .setColor(`#2f3136`)
         message.reply({
             embeds: [kissembed]
         });

@@ -6,7 +6,7 @@ const Data = require('../../Data/boy-pic.json')
 module.exports = {
       name: "bpic",
       aliases: ['boypic'],
-      description: "Send A Random Profile",
+      description: "عکس پـروفایل پسـرونه",
       cooldown: 2,
       userPerms: [],
       clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],

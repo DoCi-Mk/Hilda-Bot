@@ -1,30 +1,28 @@
-const { MessageActionRow , MessageEmbed , MessageButton } = require('discord.js')
+const { MessageActionRow, MessageEmbed, MessageButton } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
 
 module.exports = {
-      name: "haval",
-      aliases: [],
-      description: "درصد اعتیاد به دیسکورد",
-      usage: ">haval",
-      category: "فان و بازی",
-      cooldown: 2,
-      userPerms: [],
-      clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
-  
+  name: "haval",
+  aliases: [],
+  description: "درصد هول بودن شما ",
+  cooldown: 2,
+  userPerms: [],
+  clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
+
   run: async (client, message, args) => {
 
     const Darsad = [
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322806886334484/1.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322807712641084/2.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322808819920936/3.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322809788801034/4.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322810371813437/5.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322811462352966/6.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322814108946462/7.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322815568576562/8.png',
-        'https://cdn.discordapp.com/attachments/872099884151476255/875322816470319164/9.png',
-   ]
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322806886334484/1.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322807712641084/2.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322808819920936/3.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322809788801034/4.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322810371813437/5.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322811462352966/6.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322814108946462/7.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322815568576562/8.png',
+      'https://cdn.discordapp.com/attachments/872099884151476255/875322816470319164/9.png',
+    ]
 
     var pic = Darsad[Math.floor(Math.random() * Darsad.length)];
 
@@ -39,13 +37,13 @@ module.exports = {
     var emojies = emoji[Math.floor(Math.random() * emoji.length)];
 
 
-        const kissembed = new MessageEmbed()
-        .setAuthor('هَـــوَل 🤤')
-        .setDescription('**بات هیچوقت دروغ نمیگه <a:756510183437369471:874900290162282496>**')
-.setImage(pic)
-        .setColor(`RANDOM`)
-        .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))
-        message.reply({
-            embeds: [kissembed]
-        });
-}}
+    const kissembed = new MessageEmbed()
+      .setAuthor('هَـــوَل 🤤')
+      .setImage(pic)
+      .setColor(`#2f3136`)
+      .setFooter(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+    message.reply({
+      embeds: [kissembed]
+    });
+  }
+}

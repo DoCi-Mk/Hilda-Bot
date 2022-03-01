@@ -6,7 +6,6 @@ module.exports = {
       name: "disord",
       aliases: ['discord'],
       description: "درصد اعتیاد به دیسکورد",
-      usage: ">discord",
       category: "فان و بازی",
       cooldown: 2,
       userPerms: [],
@@ -57,7 +56,7 @@ module.exports = {
         const kissembed = new MessageEmbed()
         .setAuthor('اعــتیاد بـه دیـسکـورد 🚬')
         .setDescription((`**دوست عزیز شما ${pic}% به دیسکورد معتاد هستید ${emojies}**`))
-        .setColor(`RANDOM`)
+        .setColor(`#2f3136`)
         message.reply({
             embeds: [kissembed]
         });

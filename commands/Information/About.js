@@ -10,7 +10,7 @@ module.exports = {
   name: 'about',
   category: 'info',
   aliases: ["botinfo", "bot", "stats", "support", "stat"],
-  description: 'Say Help and All Commands',
+  description: 'اطلاعات ربات',
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
 

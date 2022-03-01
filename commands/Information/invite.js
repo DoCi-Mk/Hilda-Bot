@@ -9,7 +9,7 @@ module.exports = {
   name : 'invite',
   category : 'info',
   aliases: ["support" , "sup"],
-  description : 'Say Help and All Commands',
+  description : 'دعوت بات به سرور خود',
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
   

@@ -5,9 +5,7 @@ const config = require('../../config.json')
 module.exports = {
       name: "lez",
       aliases: ['lez','les'],
-      description: "درصد اعتیاد به دیسکورد",
-      usage: ">lez",
-      category: "فان و بازی",
+      description: "درصد لز بودن شما دوست عزیز",
       cooldown: 2,
       userPerms: [],
       clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
@@ -54,7 +52,7 @@ module.exports = {
         const kissembed = new MessageEmbed()
         .setAuthor('لـــز 🤓')
         .setDescription((`**دوست عزیز شما ${pic}% لــز هستیـد ${emojies}**`))
-        .setColor(`RANDOM`)
+        .setColor(`#2f3136`)
         message.reply({
             embeds: [kissembed]
         });

@@ -7,7 +7,7 @@ module.exports = {
     name: "hotchair",
     category: "Games🎲",
     aliases: ['sd', 'sandalidagh', 'hc'],
-    description: "Send Hot Chair Question",
+    description: "سوالات جتجالی برای صندلی داغ",
     cooldown: 2,
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
