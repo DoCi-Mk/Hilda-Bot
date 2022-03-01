@@ -8,7 +8,7 @@ module.exports = {
     name: "zanyab",
     category: "Games🎲",
     aliases: ['zy'],
-    description: "Send 5sanie Game",
+    description: "پیدا کردن زن آینده خوب",
     cooldown: 2,
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],

@@ -6,7 +6,7 @@ const axios = require("axios");
 
 module.exports = {
     name:"hadis",
-    description: "",
+    description: "حدیث و سخن بزرگان",
     category: "Other",
     cooldown: 2,
     userPerms: [],

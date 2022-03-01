@@ -20,7 +20,7 @@ module.exports = {
         new deklameSchema({
             deklame: Text
         }).save();
-        message.reply({ content: `Added Text To DataBase` })
+        message.reply({ content: `ویدیو با موفقیت در دیتابیس ذخیره شد ${emoji.success}` })
 
         Channel_Log.send({
             embeds: [

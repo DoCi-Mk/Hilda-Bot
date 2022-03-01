@@ -18,7 +18,7 @@ module.exports = {
     name: "8ball",
 	aliases: ["8balls" , "soal" , "aya"],
     category: "Games🎲",
-    description: "Answers a Question",
+    description: "پاسخ به سوال شما",
     usage: "8ball <QUESTION>",
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],

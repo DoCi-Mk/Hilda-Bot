@@ -3,7 +3,7 @@ const { MessageActionRow , MessageEmbed , MessageButton } = require('discord.js'
 module.exports = {
     name:"deplove",
     aliases: ["depl" , "lovedep"],
-    description: "",
+    description: "محتوای دپ و عاشقانه",
     category: "Other",
     cooldown: 2,
     onlyowner: true,

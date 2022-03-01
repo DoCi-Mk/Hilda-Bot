@@ -6,7 +6,7 @@ const axios = require("axios");
 
 module.exports = {
     name:"fal",
-    description: "",
+    description: "فال شانسی شما از حافظ",
     category: "Other",
     cooldown: 2,
     userPerms: [],

@@ -7,7 +7,7 @@ const axios = require("axios");
 module.exports = {
     name:"fact",
     aliases: ["f"],
-    description: "",
+    description: "دانستنی های دنیا",
     category: "Other",
     cooldown: 2,
     userPerms: [],

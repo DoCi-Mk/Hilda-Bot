@@ -3,7 +3,7 @@ const { MessageActionRow , MessageEmbed , MessageButton } = require('discord.js'
 module.exports = {
     name:"gif",
     aliases: [""],
-    description: "",
+    description: "گیف خنده دار",
     category: "Other",
     cooldown: 2,
     userPerms: [],

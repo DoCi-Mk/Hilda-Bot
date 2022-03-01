@@ -6,9 +6,8 @@ const v = require('../../config.json')
 
 module.exports = {
   name: "avatar",
-  category: "کاربردی",
+  description: "دیدن پروفایل فرد مورد نظر",
   aliases: ['av'],
-  usage: "!avatar <user>",
   args: true,
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],

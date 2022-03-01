@@ -7,7 +7,7 @@ const axios = require("axios");
 module.exports = {
       name: "love",
       aliases: ['lc','Lc','Love'],
-      description: "kisses a mentioned user",
+      description: "علاقه شما نسبت به فرد دیگر",
       usage: ">lc <Mention User>",
       category: "فان و بازی",
       cooldown: 2,
