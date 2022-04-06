@@ -42,16 +42,16 @@ client.on('messageCreate', async message => {
         return message.reply(`${emoji.decline} Bot Doesn't Have \`${command.clientPerms || []}\` Permission , Please Give It To Bot`)
 
       if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
-        return message.reply(`این کامند فقط برای افراد **VIP** فعال میباشد ${emoji.labtop}`)
+        return message.reply(`این دســــتور فقط بــرای افــراد **VIP** فعال میباشد ${emoji.Smile}`)
       if (command.disable) {
         if (!owner.includes(message.author.id)) {
-          message.channel.send(`${message.member} این کامند به دلیل مشکلات فنی فعلا غیرفعال شده است ${emoji.smiling} برای اطلاعات بیشتر در سرور پشتیبانی جوین شوید\n${config.support}`)
+          message.reply(`**ایــن دستــور در دســت تعمیر و فــعلا غیرفـعال اســت . پس از فــعالسازی در ســرور پشتیبانی به شما اطلاع میــدهیم ${emoji.Down}**\n${config.support}`)
           return;
         }
       }
       if (command.owneronly) {
         if (!owner.includes(message.author.id)) {
-          message.channel.send(`${message.member} این کامند فقط برای **سازندگان بات** قابل استفاده است ${emoji.smiling}`)
+          message.channel.send(`${message.member} این کامند فقط برای **__سازندگان بات__** قابل استفاده است ${emoji.Smile}`)
           return;
         }
       }

@@ -24,19 +24,13 @@ client.on('messageCreate', async message => {
             .addComponents(
                 new MessageButton()
                 .setURL(`${config.botinvite}`)
-                .setLabel(`Invite Hilda Bot`)
-                .setStyle('LINK')
-            )
-            .addComponents(
-                new MessageButton()
-                .setURL(`${v.vote}`)
-                .setLabel(`Vote Hilda Bot`)
+                .setLabel(`دعوت ربات`)
                 .setStyle('LINK')
             )
             .addComponents(
                 new MessageButton()
                 .setURL(`${config.support}`)
-                .setLabel(`Support Hilda Bot`)
+                .setLabel(`پشتیبانی ربات`)
                 .setStyle('LINK')
             )
 
@@ -46,7 +40,7 @@ client.on('messageCreate', async message => {
             .setColor('#30b4c2')
             .setFooter(`Use ${prefix}help See All Command's`, message.author.displayAvatarURL({ dynamic: true }))
         if (message.author.bot) return;
-        return message.channel.send({ embeds: [mention], components: [row] });
+        return message.reply({ content: `**ســلام دوست من ${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی از دستور \`help${prefix}\` استفاده کنی ${emoji.Sharab}**`, components: [row] });
     }
 
 
