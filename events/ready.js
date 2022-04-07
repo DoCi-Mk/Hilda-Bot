@@ -1,24 +1,24 @@
 const client = require("../index.js");
 const { MessageActionRow , MessageEmbed , MessageButton , MessageSelectMenu,Permissions } = require('discord.js')
 const emoji = require('../emoji')
-const v = require('../config.json')
+const config = require('../config.json')
 const settingsSchema = require('../models/settings.js')
 
 client.on('ready', async() => {
     
-    const row = new MessageActionRow()
-    .addComponents(
+  const row = new MessageActionRow()
+  .addComponents(
       new MessageButton()
-      .setURL(`${v.botinvite}`)
-      .setLabel(`Invite OnlyNude Bot`)
+      .setURL(`${config.botinvite}`)
+      .setLabel(`دعوت ربات`)
       .setStyle('LINK')
-    )
-            .addComponents(
-        new MessageButton()
-          .setURL(`${v.vote}`)
-          .setLabel(`Vote OnlyNude Bot`)
-          .setStyle('LINK')
-      )
+  )
+  .addComponents(
+      new MessageButton()
+      .setURL(`${config.support}`)
+      .setLabel(`پشتیبانی ربات`)
+      .setStyle('LINK')
+  )
     
     StateChannel = await client.channels.cache.get('947475748426493984')
 

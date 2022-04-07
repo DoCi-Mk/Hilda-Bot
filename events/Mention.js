@@ -40,7 +40,7 @@ client.on('messageCreate', async message => {
             .setColor('#30b4c2')
             .setFooter(`Use ${prefix}help See All Command's`, message.author.displayAvatarURL({ dynamic: true }))
         if (message.author.bot) return;
-        return message.reply({ content: `**ســلام دوست من ${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی از دستور \`help${prefix}\` استفاده کنی ${emoji.Sharab}**`, components: [row] });
+        return message.reply({ content: `**ســلام دوست من ${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی از دستور \`help${prefix}\` یا \`help/\`  استفاده کنی ${emoji.Sharab}**`, components: [row] });
     }
 
 
