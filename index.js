@@ -7,6 +7,7 @@ app.get('/', (req, res) => res.send('Hello World!'));
 app.listen(port, () => console.log(`http://localhost:${port}`));
 
 const axios = require("axios").default;
+const ytdl = require('ytdl-core')
 const { Collection , Client , Discord } = require('discord.js')
 const config = require('./config.json');
 const token = process.env.TOKEN

@@ -5,7 +5,7 @@ const Data = require('../../Data/haghighat.json')
 
 module.exports = {
     name: "haghighat",
-    category: "Games 🎲",
+    category: "Event's",
     aliases: ['h'],
     description: "سوالات جنجالی برای حقیقت",
     cooldown: 2,
@@ -16,13 +16,6 @@ module.exports = {
 
 
         var Text = Data[Math.floor(Math.random() * Data.length)];
-    
-    
-        const picembed = new MessageEmbed()
-        .setColor('#2f3136')
-        .setDescription(`${emoji.haghighat} **${Text}**`)
-        await message.reply({
-            embeds: [picembed]
-        });
+        message.reply({content: `${emoji.Haghighat}〢${Text}`})
   }
   }

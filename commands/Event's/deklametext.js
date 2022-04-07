@@ -6,9 +6,9 @@ const dbdeklame = require('../../models/newdeklame')
 
 module.exports = {
     name: "deklametext",
-    category: "Games🎲",
+    category: "Event's",
     aliases: ['deklamet','dt'],
-    description: "متن دکلمه برای اجرا",
+    description: "متن های اماده برای دکلمه",
     cooldown: 2,
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],

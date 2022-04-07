@@ -1,5 +1,6 @@
 const { MessageEmbed, MessageActionRow, MessageButton, interaction } = require("discord.js");
 const prefixdb = require('../../models/prefix')
+const ytdl = require('ytdl-core')
 const config = require('../../config.json')
 const DiscordVoice = require('@discordjs/voice')
 const emoji = require('../../emoji')
@@ -18,7 +19,7 @@ let audios = [
 
 module.exports = {
   name: 'deklame',
-  description: 'پخش موزیک های آرام بخش برای دکلمه',
+  description: 'پخش موزیک هایی برای دکلمه',
   category: "Event's",
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS", "CONNECT", "SPEAK"],
@@ -37,7 +38,7 @@ module.exports = {
 
     const channel = message.member.voice.channel
     let embed = new MessageEmbed()
-      .setDescription(`**لطفا ابتدا به ویس متصل شوید سپس ، مجدداً از دستور استفاده کنید** ${emoji.sepas}`)
+      .setDescription(`**لطفا ابتدا به ویس متصل شوید سپس ، مجدداً از دستور استفاده کنید** ${emoji.Sepas}`)
       .setColor('#316899')
       .setFooter(
         `${message.author.tag}`,
@@ -51,7 +52,7 @@ module.exports = {
     if (!channel) return message.channel.send({ embeds: [embed] })
     audioIndex = Math.floor(Math.random() * 5)
     const player = DiscordVoice.createAudioPlayer();
-    const resource = DiscordVoice.createAudioResource(audios[audioIndex])
+    const resource = DiscordVoice.createAudioResource(ytdl(audios[audioIndex]))
     const connection = DiscordVoice.joinVoiceChannel({
       channelId: channel.id,
       guildId: message.guild.id,
@@ -62,6 +63,6 @@ module.exports = {
     player.on(DiscordVoice.AudioPlayerStatus.Idle, () => {
       connection.destroy()
     })
-    message.reply(`موزیک **دکــــلـمه** در حال پخش است ${emoji.music}`)
+    message.reply(`موزیک **دکــــلـمه** در حال پخش است ${emoji.Microphone}`)
   }
 }

@@ -35,11 +35,11 @@ client.on('messageCreate', async message => {
     if (command) {
 
       //USER PERMISSION
-      if (!message.member.permissions.has(command.userPerms || [])) return message.reply(`${emoji.decline} You Dont Have \`${command.userPerms || []}\` Permission`)
+      if (!message.member.permissions.has(command.userPerms || [])) return message.reply(`${emoji.Denied} You Dont Have \`${command.userPerms || []}\` Permission`)
 
       //BOT PERMISSION
       if (!message.guild.me.permissions.has(command.clientPerms || []))
-        return message.reply(`${emoji.decline} Bot Doesn't Have \`${command.clientPerms || []}\` Permission , Please Give It To Bot`)
+        return message.reply(`${emoji.Denied} Bot Doesn't Have \`${command.clientPerms || []}\` Permission , Please Give It To Bot`)
 
       if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
         return message.reply(`این دســــتور فقط بــرای افــراد **VIP** فعال میباشد ${emoji.Smile}`)

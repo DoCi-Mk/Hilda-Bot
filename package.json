@@ -15,7 +15,8 @@
     "os": "^0.1.2",
     "os-utils": "^0.0.14",
     "request-promise-native": "^1.0.9",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+    "ytdl-core": "^4.11.0"
   },
   "name": "hilda",
   "version": "1.0.0",

@@ -5,7 +5,7 @@ const Data = require('../../Data/jorat.json')
 
 module.exports = {
     name: "jorat",
-    category: "Games 🎲",
+    category: "Event's",
     aliases: ['j'],
     description: "سوالات جنجالی برای جرئت",
     cooldown: 2,
@@ -15,12 +15,6 @@ module.exports = {
     run: async (client, message, args) => {
 
         var Text = Data[Math.floor(Math.random() * Data.length)];
-
-        const picembed = new MessageEmbed()
-            .setColor('#2f3136')
-            .setDescription(`${emoji.jorat} **${Text}**`)
-        await message.reply({
-            embeds: [picembed]
-        });
+        message.reply({content: `${emoji.Jorat}〢${Text}`})
     }
 }
