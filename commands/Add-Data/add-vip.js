@@ -21,12 +21,12 @@ module.exports = {
         premiumSchema.findOne({
             User: member.id
         }, async (err, data) => {
-            if (data) return message.reply({ content: `این یوزر قبلا **VIP** بوده است ! ${emoji.ajab}` })
+            if (data) return message.reply({ content: `این یوزر قبلا **VIP** بوده است ! ${emoji.Ajab}` })
 
             new premiumSchema({
                 User: member.id
             }).save();
-            return message.reply(`یوزر **${member.user.tag}** با موفقیت **VIP** شد ${emoji.success}`)
+            return message.reply(`یوزر **${member.user.tag}** با موفقیت **VIP** شد ${emoji.Accept}`)
         }
         )
     }
