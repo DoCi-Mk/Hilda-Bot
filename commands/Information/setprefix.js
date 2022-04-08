@@ -8,7 +8,7 @@ module.exports = {
   name: 'setprefix',
   aliases: ["prefix"],
   description: "مشخص کردن پریفیکس جدید برای سرور",
-  userPerms: ["ADMINSRATOR"],
+  userPerms: ["ADMINISTRATOR"],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
 
   run: async (client, message, args, prefix) => {

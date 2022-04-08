@@ -6,7 +6,7 @@ module.exports = {
     Smile: "<:Smlie:905448658756055100>",
     Down: "<:Paeen:905451102437257216>",
     Accept: "<:checkmarkbutton_2705:947563622916317254>",
-    Denied: "<:checkmarkbutton_2705:947563622916317254><:crossmark_274c:947563622769491988>",
+    Denied: "<:crossmark_274c:947563622769491988>",
     Ajab: "<:ok_bfhm:948197442283794493>",
     Microphone: "<:Microphone:961733108070223943>",
     Sepas: "<:foldedhands_lightskintone_1f64f1:947864879677702144>",
