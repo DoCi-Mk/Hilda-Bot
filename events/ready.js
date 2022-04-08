@@ -9,13 +9,13 @@ client.on('ready', async() => {
   const row = new MessageActionRow()
   .addComponents(
       new MessageButton()
-      .setURL(`${config.botinvite}`)
+      .setURL(`${config.BotInvite}`)
       .setLabel(`دعوت ربات`)
       .setStyle('LINK')
   )
   .addComponents(
       new MessageButton()
-      .setURL(`${config.support}`)
+      .setURL(`${config.Support}`)
       .setLabel(`پشتیبانی ربات`)
       .setStyle('LINK')
   )

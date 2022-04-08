@@ -16,4 +16,5 @@ module.exports = {
     PanjSanie: "<:PanjSanie:961735898242904084>",
     Loading: "<a:Load:905192864928124948>",
     Deklame: "<:deklame:947824160703414292>",
+    Title: "<:titlee:917086636465070080> ",
 }

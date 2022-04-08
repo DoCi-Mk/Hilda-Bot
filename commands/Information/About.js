@@ -3,6 +3,7 @@ const emoji = require('../../emoji')
 const prefixdb = require('../../models/prefix')
 const config = require('../../config.json')
 const moment = require("moment");
+const pack = require('../../package.json')
 require("moment-duration-format");
 
 
@@ -16,7 +17,7 @@ module.exports = {
 
   run: async (client, message, args) => {
 
-    doci = client.users.cache.get(config.owner)
+    doci = client.users.cache.get(config.Founder)
 
 
 
@@ -36,33 +37,25 @@ module.exports = {
     let embed = new MessageEmbed()
       // .setAuthor("Hilda Bot", client.user.avatarURL())
       .setColor("#2f3136")
-      .setTitle(`> ${emoji.titlee} Information Bot`)
+      .setTitle(`> ${emoji.Title} Information Bot`)
       .setDescription(
-        `**${emoji.load} **Founder : **${doci.tag} \n${emoji.load} **Total Commands :** ${client.commands.size} \n${emoji.load} **Ping :** ${client.ws.ping} \n${emoji.load} **Guild's :** ${client.guilds.cache.size} \n${emoji.load} **Channels :** ${client.channels.cache.size}\n${emoji.load} **Bot Version : **${config.version}\n${emoji.load} **Discord.js Library : **13.3.1`
+        `${emoji.Loading} **Founder : **${doci.tag} \n${emoji.Loading} **Total Commands :** ${client.commands.size} \n${emoji.Loading} **Ping :** ${client.ws.ping} \n${emoji.Loading} **Guild's :** ${client.guilds.cache.size} \n${emoji.Loading} **Channels :** ${client.channels.cache.size}\n${emoji.Loading} **Bot Version : **${config.Version}\n${emoji.Loading} **Discord.js Library : **${pack.dependencies['discord.js']}`
       )
       .setFooter(`Developed By : ${doci.tag}`, doci.avatarURL());
 
-    const row = new MessageActionRow()
+      const row = new MessageActionRow()
       .addComponents(
-        new MessageButton()
-          .setLabel(`Invite Bot`)
-          .setStyle('LINK')
-          .setURL(`${config.botinvite}`),
-      )
-      .addComponents(
-        new MessageButton()
-          .setLabel(`Support Server`)
-          .setStyle('LINK')
-          .setURL(config.support)
-      )
-      .addComponents(
-        new MessageButton()
-          .setURL(`${config.vote}`)
-          .setLabel(`Vote Hilda Bot`)
+          new MessageButton()
+          .setURL(`${config.BotInvite}`)
+          .setLabel(`دعوت ربات`)
           .setStyle('LINK')
       )
-
-
+      .addComponents(
+          new MessageButton()
+          .setURL(`${config.Support}`)
+          .setLabel(`پشتیبانی ربات`)
+          .setStyle('LINK')
+      )
 
 
     message.channel.send({ embeds: [embed], components: [row] });

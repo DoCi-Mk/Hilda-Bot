@@ -11,7 +11,7 @@ LOG_CHANNEL = '904827498548850698'
 
 client.on('messageCreate', async message => {
   if (message.author.bot && (!message.channel.id === '886691835752370186' || !message.channel.id === 903761113177530398)) return;
-  let owner = config.owner
+  let owner = config.Founder
 
   if ((!message.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES, Permissions.FLAGS.EMBED_LINKS) || !message.guild.me.permissionsIn(message.channel).has(Permissions.FLAGS.SEND_MESSAGES, Permissions.FLAGS.EMBED_LINKS))) return
   if (message.author.bot) return;

@@ -1,11 +1,12 @@
 {
     "prefix": ".",
-    "footer": "",
+    "Footer": "",
     "ChannelLog": "961359230814810172",
-    "version_bot": "3.0.0",
-    "owner": "500740143532212245",
-    "bot_avatar": "https://cdn.discordapp.com/attachments/947475748426493984/947887386715652257/hilda_Logo.png",
-    "support": "https://discord.gg/Ed2EHXunFA",
-    "vote": "https://top.gg/bot/856599103960907786/vote",
-    "botinvite": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=140693073600&scope=bot%20applications.commands"
+    "Version": "BETA",
+    "Founder": "500740143532212245",
+    "BotIcon": "https://cdn.discordapp.com/attachments/947475748426493984/947887386715652257/hilda_Logo.png",
+    "Support": "https://discord.gg/Ed2EHXunFA",
+    "Vote": "https://top.gg/bot/856599103960907786/vote",
+    "BotInvite": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=415805861216&scope=bot%20applications.commands",
+    "ModBotInvite": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=8&scope=bot%20applications.commands"
   }
