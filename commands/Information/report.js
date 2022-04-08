@@ -22,35 +22,35 @@ module.exports = {
       prefix = prefix.prefix;
     }
 
-
-    const reportchannel = client.channels.cache.get("947802788342169600");
+    const reportchannel = client.channels.cache.get(config.Report);
     const report = args.join(" ");
     if (!report) {
       return message.reply({ embeds: [
           new MessageEmbed()
-          .setDescription(`لطفا **مشکلی** که میخواهید به ما اطلاع دهید را بنویسید ${emoji.smiling}`)
+          .setDescription(`لطفا **مشکلی** که میخواهید به ما گزارش دهید را هم بنویسید ${emoji.SmilingFace}`)
           .setColor('#FF0000')
+          .setFooter(config.Footer)
       ]});
     }
     message.reply({ embeds: [
         new MessageEmbed()
-        .setDescription(`مشکل شما با موفقیت برای **تیم پشتیبانی** ارسال گردید . برای اطلاع از آخرین اخبار در [سرور پشتیبان](${config.support}) جوین شوید ${emoji.success}`)
+        .setDescription(`مشکل شما با موفقیت برای **تیم پشتیبانی** ارسال گردید . برای اطلاع از آخرین اخبار در [سرور پشتیبان](${config.Support}) جوین شوید ${emoji.Accept}`)
         .setColor('#25a934')
     ]}
       
     );
     const embed = new MessageEmbed()
-      .setTitle(`${emoji.bug} New Bug Report`)
+      .setTitle(`> New Bug Report`)
       .setThumbnail(message.author.displayAvatarURL({
         dynamic: true,
         format: "png",
         size: 2048,
        }))
-      .setDescription(`${emoji.arrow_red} **${report}**\n\n${emoji.dot1}**Report By : **${message.author.tag}\n${emoji.dot1}**UserID : **${message.author.id}`)
+      .setDescription(`${emoji.ArrowRed} **${report}**\n\n${emoji.Dot}**Report By : **${message.author.tag}\n${emoji.Dot}**UserID : **${message.author.id}`)
       .setFooter(`Bug Report From : ${message.guild.name}` , message.guild.iconURL())
       .setColor("RANDOM");
 
-    reportchannel.send({ embeds: [embed] , content: '<@500740143532212245> | <@851218809204768788>' });
+    reportchannel.send({ embeds: [embed] , content: `${config.Founder.author}` });
   },
   catch(error) {
     const errorlogs = client.channels.cache.get("911718981071667250");

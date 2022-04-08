@@ -20,7 +20,7 @@ module.exports = {
         new deploveSchema({
             deplove: Text
         }).save();
-        message.reply({ content: `ویدیو با موفقیت در دیتابیس ذخیره شد ${emoji.success}` })
+        message.reply({ content: `ویدیو با موفقیت در دیتابیس ذخیره شد ${emoji.Accept}` })
 
         Channel_Log.send({
             content: `The ${message.author.tag} Adding **DepLove** Content To DataBase \n${emoji.Arrow} ${Text}`,

@@ -17,4 +17,7 @@ module.exports = {
     Loading: "<a:Load:905192864928124948>",
     Deklame: "<:deklame:947824160703414292>",
     Title: "<:titlee:917086636465070080> ",
+    SmilingFace: "<:smilingface:961963882803519508>",
+    Dot: "<:dot_blue:905572057402724362>",
+    ArrowRed: "<:ArrowRed:905830383562670091>",
 }

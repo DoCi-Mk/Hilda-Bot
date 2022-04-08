@@ -15,12 +15,11 @@ module.exports = {
        message.reply({
            embeds: [
                new MessageEmbed()
+               .setColor(config.DefaultColor)
                .setAuthor('Package Of Hilda Bot')
-               .setDescription(`${pack.dependencies}`)
+               .setDescription(`\`\`\`json\n${JSON.stringify(pack.dependencies).replace(/,(?=[^\s])/g, ",\n")}\`\`\``)
            ]
        }
        )
-       message.reply(`\`\`\`json\n${pack.dependencies}\`\`\``)
-       console.log(pack.dependencies)
     }
 }

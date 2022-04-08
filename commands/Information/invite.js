@@ -28,30 +28,23 @@ module.exports = {
   const row = new MessageActionRow()
   .addComponents(
     new MessageButton()
-    .setURL(`${config.botinvite}`)
-    .setLabel(`Invite Hilda Bot`)
+    .setURL(`${config.BotInvite}`)
+    .setLabel(`دعوت ربات`)
     .setStyle('LINK')
   )
   .addComponents(
     new MessageButton()
-    .setURL(`${config.support}`)
-    .setLabel(`Support Hilda Bot`)
+    .setURL(`${config.Support}`)
+    .setLabel(`سرور پشتیبانی ربات`)
     .setStyle('LINK')
     )
     .addComponents(
       new MessageButton()
-      .setLabel(`Vote Hilda Bot `)
+      .setLabel(`رأی دادن به ربات`)
       .setStyle('LINK')
-      .setURL(config.vote)
+      .setURL(config.Vote)
     )
     
-    
-
-   const invite = new MessageEmbed()
-  .setAuthor('Invite Hilda Bot' , 'https://cdn.discordapp.com/emojis/843845378352873492.gif' , config.botinvite)
-  //  .setDescription(`${emoji.link} برای دعوت بات ما به سرور خود کافیه بر روی دکمۀ [**Invite Hilda Bot**](${config.botinvite}) کلیک کنید `)
-   .setColor('#316799')
-   .setImage('https://cdn.discordapp.com/attachments/871858377972654090/874702842169000037/invite.jpg')
-   message.reply({ embeds: [invite] , components: [row] })
+   message.reply({ content: `https://cdn.discordapp.com/attachments/871858377972654090/874702842169000037/invite.jpg` , components: [row] })
 
   }}
