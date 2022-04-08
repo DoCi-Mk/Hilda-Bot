@@ -17,7 +17,7 @@ module.exports = {
     var Text = Data[Math.floor(Math.random() * Data.length)];
 
     First = await message.reply({
-      content: `${emoji.PanjSanie}〢${Text}`
+      content: `${Text} ${emoji.PanjSanie}`
     })
     setTimeout(()=>{
       First.delete()

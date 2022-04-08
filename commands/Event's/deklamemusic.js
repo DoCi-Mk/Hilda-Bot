@@ -18,7 +18,8 @@ let audios = [
 ]
 
 module.exports = {
-  name: 'deklame',
+  name: 'deklamemusic',
+  aliases: ['dekmusic'],
   description: 'پخش موزیک هایی برای دکلمه',
   category: "Event's",
   userPerms: [],

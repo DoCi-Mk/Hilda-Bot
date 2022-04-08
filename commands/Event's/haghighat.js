@@ -16,6 +16,6 @@ module.exports = {
 
 
         var Text = Data[Math.floor(Math.random() * Data.length)];
-        message.reply({content: `${emoji.Haghighat}〢${Text}`})
+        message.reply({content: `${Text} ${emoji.Haghighat}`})
   }
   }

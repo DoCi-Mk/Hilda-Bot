@@ -16,6 +16,6 @@ module.exports = {
     run: async (client, message, args) => {
         
         var Text = Data[Math.floor(Math.random() * Data.length)];
-        message.reply({content: `${emoji.SandaliDagh}〢${Text}`})
+        message.reply({content: `${Text} ${emoji.SandaliDagh}`})
     }
 }
