@@ -49,11 +49,5 @@ module.exports = {
     var emojies = emoji[Math.floor(Math.random() * emoji.length)];
 
 
-        const kissembed = new MessageEmbed()
-        .setAuthor('لـــز 🤓')
-        .setDescription((`**دوست عزیز شما ${pic}% لــز هستیـد ${emojies}**`))
-        .setColor(`#2f3136`)
-        message.reply({
-            embeds: [kissembed]
-        });
+        message.reply(`**دوست عزیز شما ${pic}% لــز هستیـد ${emojies}**`);
 }}

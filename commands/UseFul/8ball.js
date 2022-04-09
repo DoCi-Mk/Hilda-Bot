@@ -16,7 +16,7 @@ const answers = [
 
 module.exports = {
     name: "8ball",
-	aliases: ["8balls" , "soal" , "aya"],
+	aliases: ["8balls" , "soal" , "aya" , "آیا" , "ایا"],
     category: "Games🎲",
     description: "پاسخ به سوال شما",
     usage: "8ball <QUESTION>",
@@ -25,30 +25,14 @@ module.exports = {
     
     run: async (client, message, args) => {
 
-        let prefix = await db.fetch(`prefix_${message.guild.id}`);
-        if(prefix == null) {
-          prefix = config.prefix
-        } else {
-          prefix = prefix;
-        }
 
         if(!args[0]){
-            message.reply({
-                embeds: [
-                    new MessageEmbed()
-                    .setColor('#ef1607')
-                    .setDescription(`Lotfan Soale Khod Ra Benevisid <a:850335306657955840:856794054540394526>\n**Usage : **\`\`${prefix}aya [Soale Khod]\`\``)
-                ]
-            })
+            message.reply(`لطفا پرسش خود را هم مطرح کنید ${emoji.SmilingFace}`)
             return;
         }
         // Creates an ambed and picks a random answer from the answer array
-            let embed = new MessageEmbed()
-            .setAuthor('حــاضر جــواب ❓')
-            .setDescription(`**${(answers[Math.floor(Math.random() * answers.length)])}**`)
-            .setColor(`RANDOM`)
-            .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))
-            message.reply({ embeds: [embed] })
+
+            message.reply(`پاسخ : **${(answers[Math.floor(Math.random() * answers.length)])}**`)
 
     },
     catch(error) {

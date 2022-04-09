@@ -171,7 +171,7 @@ module.exports = {
 
 
         const picembed = new MessageEmbed()
-        .setColor('#2f3136')
+        .setColor(config.DefaultColor)
         .setAuthor('زن آیــنده شـما 👧')
         .setThumbnail(profzan)
         .addFields(

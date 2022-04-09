@@ -24,12 +24,7 @@ run: async (client, message, args) => {
   };
     let infoValue3 = await getInfo3();
 
-        let embed1 = new MessageEmbed()
-        .setAuthor('ســخــن بــزرگــان 📚')
-        .setColor("#2f3136")
-        .setDescription(`**\n${infoValue3}\n\n**`)
-        .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))
-        message.channel.send({ embeds: [embed1] })
+        message.channel.send(`**ســخــن بــزرگــان : **\n📚 ${infoValue3}`)
     },
     catch(error) {
         const errorlogs = client.channels.cache.get("911718981071667250");

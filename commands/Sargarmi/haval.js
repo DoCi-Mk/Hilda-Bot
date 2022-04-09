@@ -40,10 +40,7 @@ module.exports = {
     const kissembed = new MessageEmbed()
       .setAuthor('هَـــوَل 🤤')
       .setImage(pic)
-      .setColor(`#2f3136`)
+      .setColor(config.DefaultColor)
       .setFooter(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-    message.reply({
-      embeds: [kissembed]
-    });
   }
 }

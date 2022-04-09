@@ -17,9 +17,9 @@ module.exports = {
 
 
         const kissembed = new MessageEmbed()
-        .setTitle(`گـیـف پـروفایل پسـرونه ${emoji.boy}`)
+        .setTitle(`گـیـف پـروفایل پسـرونه ${emoji.Boy}`)
         .setImage(Pictures)
-        .setColor(`RANDOM`)
+        .setColor(config.DefaultColor)
         message.reply({
             embeds: [kissembed]
         });

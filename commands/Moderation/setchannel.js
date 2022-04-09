@@ -38,5 +38,7 @@ module.exports = {
             }).save();
         }
         message.reply(`**اکشن لاگِ** تمام کامند های مدریشن با موفقیت در چنل <#${newChannel}> ست شد ${emoji.Accept}\nشما با استفاده از این قابلیت میتوانید عملکرد ربات را در سرور خود مشاهده کنید ${emoji.Sepas}`)
+        const Send = client.channels.cache.get(newChannel)
+        Send.send(`${message.author} | این چنل به عنوان اکشن لاگ با موفقیت ست گردید ${emoji.Accept}`)
     }
 }

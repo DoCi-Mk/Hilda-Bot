@@ -11,7 +11,7 @@ module.exports = {
     userPerms: ["MANAGE_GUILD"],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS", "MANAGE_GUILD"],
 
-    run: async (client, message, args) => {
+    run: async(client, message, args) => {
 
         let channelLog = await channeldb.findOne({
             guild: message.guild.id,
@@ -26,18 +26,20 @@ module.exports = {
         }
         if (!args[0]) return message.reply(`لطفا لینک بنری که میخواهید بزارید هم وارد کنید ${emoji.Denied}`)
         message.guild.edit({ banner: args[0] })
-        ActionChannelLog.send({ embeds:[
-            new MessageEmbed()
-            .setAuthor(`SetBanner Command ActionLog`)
-            .setDescription(`Banner Set By : ${message.author.tag}`)
-            .setImage(args[0])
-        ] })
+        ActionChannelLog.send({
+            embeds: [
+                new MessageEmbed()
+                .setDescription(`بنر سـرورِ \`${message.guild.name}\` در ساعت <t:${message.createdTimestamp.toString().slice(0, message.createdTimestamp.toString().length - 3)}:f> به بنر زیر توسط **${message.author.tag}** تغییر یافت ${emoji.Accept}`)
+                .setImage(args[0])
+                .setColor(config.DefaultColor)
+            ]
+        })
         return message.reply({
             embeds: [
                 new MessageEmbed()
-                    .setDescription(`بنر با موفقیت توسط **${message.author.tag}** تغییر یافت ${emoji.Accept}`)
-                    .setImage(args[0])
-                    .setColor(config.DefaultColor)
+                .setDescription(`بنر با موفقیت توسط **${message.author.tag}** تغییر یافت ${emoji.Accept}`)
+                .setImage(args[0])
+                .setColor(config.DefaultColor)
             ]
         })
 

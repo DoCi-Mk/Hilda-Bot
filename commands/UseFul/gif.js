@@ -1,4 +1,5 @@
 const { MessageActionRow , MessageEmbed , MessageButton } = require('discord.js')
+const config = require('../../config.json')
 
 module.exports = {
     name:"gif",
@@ -54,7 +55,7 @@ run: async (client, message, args) => {
 
         let embed1 = new MessageEmbed()
         .setAuthor('گـیـف مــولایی 🗿')
-        .setColor("#2f3136")
+        .setColor(config.DefaultColor)
         .setDescription('**[برای دیدن گیف های بیشتر کلیک کنید](https://discord.gg/Ed2EHXunFA)**')
         .setImage(`${fal}`)
         .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))

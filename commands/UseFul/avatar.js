@@ -32,7 +32,7 @@ module.exports = {
   const embed = new MessageEmbed()
   .setAuthor('آواتــار🖼️')
   .setDescription("**شما در حال دیدن آواتــار**" + user.toString() + "**هـستـید ** <:853973876593131580:862366006920085534>")
-  .setColor(`RANDOM`)
+  .setColor(config.DefaultColor)
   .setImage(avatar)
   .setFooter(message.guild.name, message.guild.iconURL({dynamic: true}))
   return message.reply({

@@ -16,9 +16,9 @@ module.exports = {
     var Pictures = Data[Math.floor(Math.random() * Data.length)];
 
         const kissembed = new MessageEmbed()
-        .setTitle(`عـکـس پـروفایل پسـرونه ${emoji.boy}`)
+        .setTitle(`عـکـس پـروفایل پسـرونه ${emoji.Boy}`)
         .setImage(Pictures)
-        .setColor(`RANDOM`)
+        .setColor(config.DefaultColor)
         message.reply({
             embeds: [kissembed]
         });

@@ -25,13 +25,5 @@ run: async (client, message, args) => {
   };
     let infoValue3 = await getInfo3();
 
-        let embed1 = new MessageEmbed()
-        .setAuthor('آیا میـدانـسـتید ؟ 🧐')
-        .setColor("#2f3136")
-        .setDescription(`**\n<:816216804962730004:862366006471032882> ${infoValue3}\n\n**`)
-        .setTimestamp()
-        .setFooter(`${message.author.username}` , message.author.displayAvatarURL({ dynamic: true }))
-        message.reply({
-            embeds: [embed1]
-        }) 
+        message.reply(`**آیا میدانستید ؟ : **\n<:816216804962730004:862366006471032882> ${infoValue3}`) 
     }}

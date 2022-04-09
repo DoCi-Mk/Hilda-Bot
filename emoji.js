@@ -20,4 +20,7 @@ module.exports = {
     SmilingFace: "<:smilingface:961963882803519508>",
     Dot: "<:dot_blue:905572057402724362>",
     ArrowRed: "<:ArrowRed:905830383562670091>",
+    Girl: "<:girl:947976409463267419>",
+    Boy: "<:boy:947976415670845500>",
+    Chat: "<:chat:962307291997151302>",
 }
