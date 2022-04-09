@@ -1,8 +1,7 @@
 const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = require('discord.js')
-const emoji = require('../../emoji')
+const emoji = require('../../emoji-exp')
 const prefixdb = require('../../models/prefix')
 const config = require('../../config.json')
-const v = require('../../config.json')
 const update = require('../../updatelog.json')
 
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
 
   run: async (client, message, args) => {
 
-    OWNER = client.users.cache.get(config.owner)
+    OWNER = client.users.cache.get(config.Founder)
 
     let prefix = await prefixdb.findOne({
       guildid: message.guild.id
@@ -28,19 +27,19 @@ module.exports = {
     const invite = new MessageActionRow()
       .addComponents(
         new MessageButton()
-          .setURL(`${config.botinvite}`)
+          .setURL(`${config.BotInvite}`)
           .setLabel(`Invite Hilda Bot`)
           .setStyle('LINK')
       )
       .addComponents(
         new MessageButton()
-          .setURL(v.support)
+          .setURL(config.Support)
           .setLabel(`Support Hilda Bot`)
           .setStyle('LINK')
       )
       .addComponents(
         new MessageButton()
-          .setURL(`${v.vote}`)
+          .setURL(`${config.Vote}`)
           .setLabel(`Vote Hilda Bot`)
           .setStyle('LINK')
       )
@@ -102,12 +101,13 @@ module.exports = {
       )
 
     const update_log = new MessageEmbed()
-      .setAuthor(`تاریخچه بروزرسانی ها・ورژن کنونی بات : ${v.version_bot}`)
+      .setAuthor(`تاریخچه بروزرسانی ها・ورژن کنونی بات : ${config.Version}`)
       .setDescription(`\`\`\`${update.update}\`\`\``)
       .setColor('#2f3136')
       .setFooter('اگر سوالی در رابطه با آپدیت های اخیر بات داشتید در سرور پشتیبان با ما در ارتباط باشید')
 
     const helo_deklame = new MessageEmbed()
+      .setDescription(`${emoji.deklame} \`${prefix}deklame\` <a:pfeilarrow:962066752907395132> **ربات برای شما متن دکلمه ارسال میکند**`)
       .setColor('#2f3136')
       .setAuthor('• دستورات دکـــلمه')
       .setFooter(message.author.username, message.author.displayAvatarURL())

@@ -21,11 +21,9 @@ client.on('ready', async() => {
   )
     
     StateChannel = await client.channels.cache.get('947475748426493984')
-
-    console.log(`${client.user.username} has logged in`);
-    client.user.setPresence({ status: "dnd" });
+    client.user.setPresence({ status: "idle" });
     global.servers = client.guilds.cache.size
-    console.log(`Ready! Logged in as ${client.user.tag} Now In ${client.guilds.cache.size} Server `);
+    console.log(`Ready! Logged in as ${client.user.tag} Now In ${client.guilds.cache.size} Server and doci konie :D`);
     client.user.setActivity(`${global.servers} Guild | >help`, { type: "WATCHING" })
 
 
