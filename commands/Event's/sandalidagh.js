@@ -2,6 +2,7 @@ const { MessageActionRow, MessageEmbed, MessageButton } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
 const Data = require('../../Data/sandali-dagh.json')
+const sddb = require('../../models/newsd')
 
 module.exports = {
     name: "hotchair",
@@ -14,8 +15,12 @@ module.exports = {
 
 
     run: async (client, message, args) => {
+
+        let Matn = await sddb.find({
+        }).exec()
         
-        var Text = Data[Math.floor(Math.random() * Data.length)];
-        message.reply({content: `${Text} ${emoji.SandaliDagh}`})
+        var Text = Matn[Math.floor(Math.random() * Matn.length)];
+    
+        message.reply({content: `${Text.hot} ${emoji.SandaliDagh}`})
     }
 }
