@@ -42,18 +42,11 @@ module.exports = {
 
         const user = message.mentions.users.first();
         if(!user)
-        return message.reply('**فرد مورد نظر را منشن کنید <a:795828303290302464:857012889599475712> **')
+        return message.reply(`> ${message.author} ${emoji.Love} ${message.author}\n\nشما **${pic}%** به هم علاقه مند هستید <a:779938360692047872:858651576704172094>`)
 
    
 
-        const kissembed = new MessageEmbed()
-        .setAuthor('درصــد عـشـق 💖' )
-        .setDescription((`تو ${message.author.toString()} ` + ` **${pic}%** ` + user.toString() + " را دوســـت داری <a:779938360692047872:858651576704172094> "))
-        .setColor(`#2f3136`)
-        .setFooter(message.guild.name, message.guild.iconURL({dynamic: true}))
-        message.reply({
-            embeds: [kissembed]
-        });
+        message.reply(`> ${message.author.toString()} ${emoji.Love} ${user.toString()}\n\nشما **${pic}%** به هم علاقه مند هستید <a:779938360692047872:858651576704172094>`)
 
 },
 catch(error) {

@@ -34,16 +34,17 @@ run: async (client, message, args) => {
   .setColor("#2f3136")
   .setDescription(`> **فـــال شــماره :** : **(${number_random})**`)
   .addField(
-    `**${emoji.Title} شـــعــر :**`,
+    `**شـــعــر :**`,
     `> ${poem}`
   )
-  .addField(`**${emoji.title} تــعــبیر : **`, `> ${explanation}`)
+  .addField(`**تــعــبیر : **`, `> ${explanation}`)
   .setImage(
     "https://cdn.discordapp.com/attachments/906989513866362921/912047445389758464/hafezz-min.png"
   )
       .setFooter(`Source Fal By : im-parsa#9694` , 
   );
   message.channel.send({ embeds: [embed1] });
+  // message.reply(`**برای استفاده از دستور __فال__ شما باید بات جدید مارا از طریق لینک زیر دعوت کنید به سرور**\n\n> ${config.FalHafez}`)
 
  
 },

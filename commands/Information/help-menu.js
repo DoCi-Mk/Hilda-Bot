@@ -1,8 +1,9 @@
 const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = require('discord.js')
-const emoji = require('../../emoji-exp')
+const emoji = require('../../emoji')
 const prefixdb = require('../../models/prefix')
 const config = require('../../config.json')
 const update = require('../../updatelog.json')
+const pack = require('../../package.json')
 
 module.exports = {
   name: 'help',
@@ -13,7 +14,7 @@ module.exports = {
 
   run: async (client, message, args) => {
 
-    OWNER = client.users.cache.get(config.Founder)
+    doci = client.users.cache.get(config.Founder)
 
     let prefix = await prefixdb.findOne({
       guildid: message.guild.id
@@ -28,24 +29,24 @@ module.exports = {
       .addComponents(
         new MessageButton()
           .setURL(`${config.BotInvite}`)
-          .setLabel(`Invite Hilda Bot`)
+          .setLabel(`دعوت ربات`)
           .setStyle('LINK')
       )
       .addComponents(
         new MessageButton()
-          .setURL(config.Support)
-          .setLabel(`Support Hilda Bot`)
+          .setURL(`${config.Support}`)
+          .setLabel(`سرور پشتیبانی ربات`)
           .setStyle('LINK')
       )
       .addComponents(
         new MessageButton()
-          .setURL(`${config.Vote}`)
-          .setLabel(`Vote Hilda Bot`)
+          .setLabel(`رأی دادن به ربات`)
           .setStyle('LINK')
+          .setURL(config.Vote)
       )
       .addComponents(
         new MessageButton()
-          .setLabel(`Update Log !`)
+          .setLabel(`بروزرسانی اخیر`)
           .setCustomId('update')
           .setStyle('DANGER'),
       )
@@ -57,162 +58,153 @@ module.exports = {
           .setPlaceholder(`بـرای دیدن دستـورات کلیک کنـید`)
           .setOptions([{
             label: 'دکـــلمه',
-            emoji: `${emoji.deklame}`,
+            emoji: `${emoji.Deklame_Help}`,
             // description: 'Baraye Didan Command Haye Deklame Click Konid',
             value: 'deklame'
           },
           {
             label: 'ســرگــرمی',
-            emoji: `${emoji.sargarmi}`,
+            emoji: `${emoji.Sargarmi_Help}`,
             // description: 'Baraye Didan Command Haye Sargarmi Click Konid',
             value: 'sargarmi'
           },
           {
-            label: 'اطــلاعاتی',
-            emoji: `${emoji.etelaati}`,
-            // description: 'Baraye Didan Command Haye Etelaati Click Konid',
-            value: 'information'
-          },
-          {
             label: 'کــاربردی',
-            emoji: `${emoji.karbordi}`,
+            emoji: `${emoji.Karbordi_Help}`,
             // description: 'Baraye Didan Command Haye UseFul / PorKarbord Click Konid',
             value: 'karbordi'
           },
           {
             label: 'ایـــونت',
-            emoji: `${emoji.event}`,
+            emoji: `${emoji.Event_Help}`,
             // description: 'Baraye Didan Command Haye Event / ModiriateEvent Click Konid',
             value: 'event'
           },
           {
             label: 'پـــروفایـل',
-            emoji: `${emoji.motefareghe}`,
+            emoji: `${emoji.Motefareghe_Help}`,
             //  description: 'Baraye Didan Command Haye Profile Click Konid',
             value: 'prof'
           },
           {
             label: 'مـدیـریـتـی',
-            emoji: `${emoji.mod}`,
+            emoji: `${emoji.Mod_Help}`,
             //  description: 'Baraye Didan Command Haye Profile Click Konid',
             value: 'moderation'
+          },
+          {
+            label: 'اطــلاعاتی',
+            emoji: `${emoji.Etelaati_Help}`,
+            // description: 'Baraye Didan Command Haye Etelaati Click Konid',
+            value: 'information'
           },
           ])
       )
 
     const update_log = new MessageEmbed()
-      .setAuthor(`تاریخچه بروزرسانی ها・ورژن کنونی بات : ${config.Version}`)
+      .setAuthor(`بروزرسانی های اخیر بات`)
       .setDescription(`\`\`\`${update.update}\`\`\``)
       .setColor('#2f3136')
-      .setFooter('اگر سوالی در رابطه با آپدیت های اخیر بات داشتید در سرور پشتیبان با ما در ارتباط باشید')
+      .setFooter('اگر سوالی در رابطه با آپدیت های اخیر بات داشتید در سرور پشتیبان با ما در ارتباط باشید | ' + config.Version)
 
     const helo_deklame = new MessageEmbed()
-      .setDescription(`${emoji.deklame} \`${prefix}deklame\` <a:pfeilarrow:962066752907395132> **ربات برای شما متن دکلمه ارسال میکند**`)
-      .setColor('#2f3136')
-      .setAuthor('• دستورات دکـــلمه')
+      .setDescription(`
+      \n\`${prefix}deklame\` ${emoji.Arrow_Help} **ربات برای شما متن دکلمه ارسال میکند**\n
+      \n\`${prefix}deklamemusic\` ${emoji.Arrow_Help} **پخش موزیک بی کلام برای دکلمه**\n
+      \n\`${prefix}adddeklame\` ${emoji.Arrow_Help} **اضافه کردن متن دکلمه( فقط برای __VIP__ ها )**\n
+      `)
+      .setColor(config.DefaultColor)
+      .setTitle(`${emoji.Deklame_Help} دستورات دکـــلمه`)
       .setFooter(message.author.username, message.author.displayAvatarURL())
-      .addFields(
-        { name: `・پخش بی کلام موزیک دکلمه`, value: ` ${emoji.deklame} \`\`${prefix}deklame\`\``, inline: false },
-        { name: `・ارسال متن دکلمه`, value: `${emoji.deklame} \`\`${prefix}deklametext\`\``, inline: false },
-      )
 
     const helo_sargarmi = new MessageEmbed()
-      .setColor('#2f3136')
-      .setAuthor('• دستورات ســرگــرمی')
-      .setFooter(message.author.username, message.author.displayAvatarURL())
-      .addFields(
-        { name: `・پرسش و پاسخ با بات`, value: `${emoji.sargarmi} \`\`${prefix}aya [Your Question]\`\``, inline: true },
-        { name: `・پیدا کردن زن آیندتون`, value: `${emoji.sargarmi} \`\`${prefix}zanyab\`\``, inline: true },
-        { name: `・پیدا کردن شوهر آیندتون`, value: `${emoji.sargarmi} \`\`${prefix}shoharyab\`\``, inline: false },
-        { name: `・درصد اعتیاد به دیسکورد`, value: `${emoji.sargarmi} \`\`${prefix}discord\`\``, inline: true },
-        { name: `・درصد لز بودن شما دوست عزیز`, value: `${emoji.sargarmi} \`\`${prefix}lez\`\``, inline: true },
-        { name: `・درصد هَوَل بودن شما دوست عزیز`, value: `${emoji.sargarmi} \`\`${prefix}haval\`\``, inline: false },
-        { name: `・درصد گِی بودن شما دوست عزیز`, value: `${emoji.sargarmi} \`\`${prefix}gay\`\``, inline: false },
-        { name: `・درصد علاقه شما به دیگری`, value: `${emoji.sargarmi} \`\`${prefix}love [MentionUser]\`\``, inline: false },
 
-      )
+      .setColor(config.DefaultColor)
+      .setTitle(`${emoji.Sargarmi_Help} دستورات ســرگــرمی`)
+      .setDescription(`
+      \n\`${prefix}aya [Your Question]\` ${emoji.Arrow_Help} **پرسش و پاسخ با بات**\n
+      \n\`${prefix}zanyab\` ${emoji.Arrow_Help} **پیدا کردن زن آیندتون**\n
+      \n\`${prefix}shoharyab\` ${emoji.Arrow_Help} **پیدا کردن شوهر آیندتون**\n
+      \n\`${prefix}discord\` ${emoji.Arrow_Help} **درصد اعتیاد به دیسکورد**\n
+      \n\`${prefix}lez\` ${emoji.Arrow_Help} **درصد لز بودن شما دوست عزیز**\n
+      \n\`${prefix}haval\` ${emoji.Arrow_Help} **درصد هَوَل بودن شما دوست عزیز**\n
+      \n\`${prefix}gay\` ${emoji.Arrow_Help} **درصد گِی بودن شما دوست عزیز**\n
+      \n\`${prefix}love [MentionUser]\` ${emoji.Arrow_Help} **درصد علاقه شما به دیگری**\n
+      `)
+      .setFooter(message.author.username, message.author.displayAvatarURL())
 
     const help_mod = new MessageEmbed()
-      .setColor('#2f3136')
-      .setAuthor('• دستورات مـدیـریـتـی')
-      .setFooter(message.author.username, message.author.displayAvatarURL())
-      // .addFields(
-      //   {name: `فال حافظِ ` , value: `${emoji.karbordi} \`\`${prefix}fal\`\`` , inline:false},
-      //   {name: `・ارسال متن از طریق بات` , value: `${emoji.karbordi} \`\`${prefix}say\`\`` , inline:false},
-      //   {name: `・حدیث و سخن بزرگان` , value: `${emoji.karbordi} \`\`${prefix}hadis\`\`` , inline:false},
-      //   {name: `جوک خنده دار` , value: `${emoji.karbordi} \`\`${prefix}joke\`\`` , inline:false},
-      //   {name: `・دانستنی ها` , value: `${emoji.karbordi} \`\`${prefix}fact\`\`` , inline:false},
-      //   {name: `・دیدن آواتار فرد` , value: `${emoji.karbordi} \`\`${prefix}avatar\`\`` , inline:false},
-      //   {name: `・ساخت پسورد قوی` , value: `${emoji.karbordi} \`\`${prefix}gpass\`\`` , inline:false},
-      //   {name: `・فیلم دپ و عاشقانه` , value: `${emoji.karbordi} \`\`${prefix}deplove\`\`` , inline:false},
-      //   {name: `・متن دلنوشته` , value: `${emoji.karbordi} \`\`${prefix}delneveshte\`\`` , inline:false},
-      //   {name: `・گیف خنده دار` , value: `${emoji.karbordi} \`\`${prefix}gif\`\`` , inline:false},
-      // )
-      .setDescription(`${emoji.load} به زودی !`)
+      .setColor(config.DefaultColor)
+      .setTitle(`${emoji.Mod_Help} دستورات مـدیـریـتـی`)
+      .setDescription(`
+      \n\`${prefix}setlog\` ${emoji.Arrow_Help} **تنظیم کردن چنل اکشن لاگ**\n
+      \n\`${prefix}setbanner\` ${emoji.Arrow_Help} **تنظیم کردن بنر سرور**\n
+      \n\`${prefix}clear\` ${emoji.Arrow_Help} **پاک کردن پیام**\n
+      \n\`${prefix}muteall\` ${emoji.Arrow_Help} **میوت کردن تمام افراد رو ویس**\n
+      \n\`${prefix}unmuteall\` ${emoji.Arrow_Help} *آنمیوت کردن تمام افراد رو ویس**\n
+      \n\`${prefix}defall\` ${emoji.Arrow_Help} **دیفن کردن تمام افراد رو ویس**\n
+      \n\`${prefix}undefall\` ${emoji.Arrow_Help} **آندیفن کردن تمام افراد رو ویس**\n
+      `)
 
     const helo_karbordi = new MessageEmbed()
-      .setColor('#2f3136')
-      .setAuthor('• دستورات کــاربــردی')
+      .setColor(config.DefaultColor)
+      .setTitle(`${emoji.Karbordi_Help} دستورات کــاربــردی`)
       .setFooter(message.author.username, message.author.displayAvatarURL())
-      .addFields(
-        { name: `فال حافظِ `, value: `${emoji.karbordi} \`\`${prefix}fal\`\``, inline: false },
-        { name: `・ارسال متن از طریق بات`, value: `${emoji.karbordi} \`\`${prefix}say\`\``, inline: false },
-        { name: `・حدیث و سخن بزرگان`, value: `${emoji.karbordi} \`\`${prefix}hadis\`\``, inline: false },
-        { name: `جوک خنده دار`, value: `${emoji.karbordi} \`\`${prefix}joke\`\``, inline: false },
-        { name: `・دانستنی ها`, value: `${emoji.karbordi} \`\`${prefix}fact\`\``, inline: false },
-        { name: `・دیدن آواتار فرد`, value: `${emoji.karbordi} \`\`${prefix}avatar\`\``, inline: false },
-        { name: `・ساخت پسورد قوی`, value: `${emoji.karbordi} \`\`${prefix}gpass\`\``, inline: false },
-        { name: `・فیلم دپ و عاشقانه`, value: `${emoji.karbordi} \`\`${prefix}deplove\`\``, inline: false },
-        { name: `・متن دلنوشته`, value: `${emoji.karbordi} \`\`${prefix}delneveshte\`\``, inline: false },
-        { name: `・گیف خنده دار`, value: `${emoji.karbordi} \`\`${prefix}gif\`\``, inline: false },
-      )
+      .setDescription(`
+      \n\`${prefix}fal\` ${emoji.Arrow_Help} **فال حافظِ**\n
+      \n\`${prefix}say\` ${emoji.Arrow_Help} **ارسال متن از طریق بات**\n
+      \n\`${prefix}hadis\` ${emoji.Arrow_Help} **حدیث و سخن بزرگان**\n
+      \n\`${prefix}joke\` ${emoji.Arrow_Help} **جوک خنده دار**\n
+      \n\`${prefix}fact\` ${emoji.Arrow_Help} **دانستنی ها**\n
+      \n\`${prefix}avatar\` ${emoji.Arrow_Help} **دیدن آواتار فرد**\n
+      \n\`${prefix}gpass\` ${emoji.Arrow_Help} **ساخت پسورد قوی**\n
+      \n\`${prefix}deplove\` ${emoji.Arrow_Help} **فیلم دپ و عاشقانه**\n
+      \n\`${prefix}gif\` ${emoji.Arrow_Help} **گیف خنده دار**\n
+      `)
 
 
     const helo_event = new MessageEmbed()
-      .setColor('#2f3136')
-      .setAuthor('• دستورات ایــونت')
+      .setColor(config.DefaultColor)
+      .setTitle(`${emoji.Event_Help} دستورات ایــونت`)
       .setFooter(message.author.username, message.author.displayAvatarURL())
-      .addFields(
-        { name: `・سوال حقیقت`, value: `${emoji.event} \`\`${prefix}haghighat / h\`\``, inline: false },
-        { name: `・سوال جرئت`, value: `${emoji.event} \`\`${prefix}jorat / j\`\``, inline: false },
-        { name: `・بازی پنج ثانیه`, value: `${emoji.event} \`\`${prefix}5s\`\``, inline: false },
-        { name: `・پاک کردن پیام`, value: `${emoji.event} \`\`${prefix}clear\`\``, inline: false },
-        { name: `・میوت کردن تمام افراد رو ویس`, value: `${emoji.event} \`\`${prefix}muteall\`\``, inline: false },
-        { name: `・آنمیوت کردن تمام افراد رو ویس`, value: `${emoji.event} \`\`${prefix}unmuteall\`\``, inline: false },
-        { name: `・دیفن کردن تمام افراد رو ویس`, value: `${emoji.event} \`\`${prefix}defall\`\``, inline: false },
-        { name: `・آندیفن کردن تمام افراد رو ویس`, value: `${emoji.event} \`\`${prefix}undefall\`\``, inline: false },
-      )
+      .setDescription(`
+      \n\`${prefix}haghighat / ${prefix}h\` ${emoji.Arrow_Help} **سوال حقیقت**\n
+      \n\`${prefix}jorat / ${prefix}j\` ${emoji.Arrow_Help} **سوال جرئت**\n
+      \n\`${prefix}5s\` ${emoji.Arrow_Help} **بازی پنج ثانیه**\n
+      \n\`${prefix}sd\` ${emoji.Arrow_Help} **سوالات جنجالی صندلی داغ**\n
+      \n\`${prefix}clear\` ${emoji.Arrow_Help} **پاک کردن پیام**\n
+      \n\`${prefix}muteall\` ${emoji.Arrow_Help} **میوت کردن تمام افراد رو ویس**\n
+      \n\`${prefix}unmuteall\` ${emoji.Arrow_Help} *آنمیوت کردن تمام افراد رو ویس**\n
+      \n\`${prefix}defall\` ${emoji.Arrow_Help} **دیفن کردن تمام افراد رو ویس**\n
+      \n\`${prefix}undefall\` ${emoji.Arrow_Help} **آندیفن کردن تمام افراد رو ویس**\n
+      `)
 
     const helo_prof = new MessageEmbed()
-      .setColor('#2f3136')
-      .setAuthor('• دستورات پـروقایل و عکس')
+      .setColor(config.DefaultColor)
+      .setTitle(`${emoji.Motefareghe_Help} دستورات پـروقایل و عکس`)
       .setFooter(message.author.username, message.author.displayAvatarURL())
-      .addFields(
-        { name: `・عکس پروفایل دخترونه`, value: `${emoji.motefareghe} \`\`${prefix}gpic\`\``, inline: false },
-        { name: `・گیف پروفایل دخترونه`, value: `${emoji.motefareghe} \`\`${prefix}ggif\`\``, inline: false },
-        { name: `・عکس پروفایل پسرونه`, value: `${emoji.motefareghe} \`\`${prefix}bpic\`\``, inline: false },
-        { name: `・گیف پروفایل پسرونه`, value: `${emoji.motefareghe} \`\`${prefix}bgif\`\``, inline: false },
-      )
-
+      .setDescription(`
+      \n\`${prefix}gpic / ${prefix}h\` ${emoji.Arrow_Help} **عکس پروفایل دخترونه**\n
+      \n\`${prefix}ggif / ${prefix}j\` ${emoji.Arrow_Help} **گیف پروفایل دخترونه**\n
+      \n\`${prefix}bpic\` ${emoji.Arrow_Help} **عکس پروفایل پسرونه**\n
+      \n\`${prefix}bgif\` ${emoji.Arrow_Help} **گیف پروفایل پسرونه**\n
+      `)
 
     const helo_information = new MessageEmbed()
-      .setColor('#2f3136')
-      .setAuthor('• دستورات اطــلاعاتی')
-      .setFooter(message.author.username, message.author.displayAvatarURL())
-      .addFields(
-        { name: `・درباره بات هیلدا`, value: `${emoji.etelaati} \`\`${prefix}about\`\``, inline: false },
-        { name: `・گزارش مشکل در بات`, value: `${emoji.etelaati} \`\`${prefix}report [Your Report]\`\``, inline: false },
-        { name: `・دعوت بات به سرورتون`, value: `${emoji.etelaati} \`\`${prefix}invite\`\``, inline: false },
-        { name: `・دادن ایده راجب بات`, value: `${emoji.etelaati} \`\`${prefix}idea [Your Idea]\`\``, inline: false },
+      .setColor(config.DefaultColor)
+      .setTitle(`> ${emoji.Title} Information Bot`)
+      .setDescription(
+        `${emoji.Loading} **Founder : **${doci.tag} \n${emoji.Loading} **Total Commands :** ${client.commands.size} \n${emoji.Loading} **Ping :** ${client.ws.ping} \n${emoji.Loading} **Guild's :** ${client.guilds.cache.size} \n${emoji.Loading} **Channels :** ${client.channels.cache.size}\n${emoji.Loading} **Bot Version : **${config.Version}\n${emoji.Loading} **Discord.js Library : **${pack.dependencies['discord.js']}`
       )
+      .setFooter(`Developed By : ${doci.tag}`, doci.avatarURL());
+
 
     const Help = new MessageEmbed()
-      .setAuthor("Hey I'm Hilda , Persian Language", 'https://cdn.discordapp.com/attachments/871858377972654090/874702796916674590/author.png')
-      .setColor('#2f3136')
-      //.setThumbnail(message.author.displayAvatarURL({dynamic: true }))
-      .setDescription(`**ســــــلام ممنونم که منو انتخاب کردید برای سرورتون ${emoji.smile} من قابلیت های خفنی دارم میتونی رو منوی زیر کلیک کنی و دستورامو ببینی \n\n${emoji.dot1} از طریق دستور زیر میتونی پریفیکس منو در سرور خودت عوضی کنی\n${emoji.load} \`\`${prefix}prefix [Your Prefix]\`\`\n\n${emoji.dot1} از طریق دستور زیر هم میتوانید اگر مشکلی در بات دیدید به ما گزارش دهید\n${emoji.load}\`\`${prefix}report [Your Problem]\`\`\n\nبرای دعوت من به سرور خود کافیه بر روی [Invite Hilda Bot](${config.botinvite}) کلیک کنید ${emoji.sepas}**`)
+      .setAuthor("Hey I'm Hilda , Persian Language Bot", client.user.displayAvatarURL())
+      .setColor(config.DefaultColor)
+      .setDescription(`**__سلام دوست من__** ${emoji.Hi}\n خوشحالم که داری از من استفاده میکنی ! از طریق منوی زیر میتونی تمام دستورات منو ببینی و استفادشون کنی ${emoji.Cheshmak}\n\n**> یه سری نکات هست این زیر بهت میگم شاید بدردت بخوره**\n${emoji.Dot} برای تغییر پریفیکس ربات در سرور خودت کافیه از دستورزیر استفاده کنید\n${emoji.Arrow} \`${prefix}prefix <New Prefix>\`\n\n${emoji.Dot} اگر مشکلی در ربات وجود داشت میتونی از طرق دستور زیر به ما گزارش بدهید\n${emoji.Arrow} \`${prefix}report <Bug>\`\n\n${emoji.Dot} از طریق دستور زیر هم میتوایند لینک های دعوت ربات را ببینید\n${emoji.Arrow} \`${prefix}invite\`\n\n **__در مرحله آخر هم خوشحال میشم ربات رو به دوستانتون معرفی کنید تا همه بتونند استفاده کنند ${emoji.Kissing}__**`)
       .setImage('https://cdn.discordapp.com/attachments/871858377972654090/874702849718759434/home.jpg')
-      .setFooter(`Dev By ${OWNER.tag}`, OWNER.displayAvatarURL({ dynamic: true }))
+      .setFooter(`Hilda Bot | ${config.Version}`)
       .setTimestamp()
     message.channel.send({ embeds: [Help], components: [row, invite] })
 
@@ -230,7 +222,7 @@ module.exports = {
           await i.update({ embeds: [helo_sargarmi], ephemeral: false });
         } else {
           if (i.values[0] === 'information') {
-            await i.update({ embeds: [helo_information], ephemeral: false });
+            await i.reply({ embeds: [helo_information], ephemeral: true });
           } else {
             if (i.values[0] === 'karbordi') {
               await i.update({ embeds: [helo_karbordi], ephemeral: false });

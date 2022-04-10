@@ -36,7 +36,7 @@ module.exports = {
 
     let embed = new MessageEmbed()
       // .setAuthor("Hilda Bot", client.user.avatarURL())
-      .setColor("#2f3136")
+      .setColor(config.DefaultColor)
       .setTitle(`> ${emoji.Title} Information Bot`)
       .setDescription(
         `${emoji.Loading} **Founder : **${doci.tag} \n${emoji.Loading} **Total Commands :** ${client.commands.size} \n${emoji.Loading} **Ping :** ${client.ws.ping} \n${emoji.Loading} **Guild's :** ${client.guilds.cache.size} \n${emoji.Loading} **Channels :** ${client.channels.cache.size}\n${emoji.Loading} **Bot Version : **${config.Version}\n${emoji.Loading} **Discord.js Library : **${pack.dependencies['discord.js']}`

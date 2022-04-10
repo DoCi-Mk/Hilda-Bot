@@ -22,12 +22,12 @@ module.exports = {
     message.channel.send(`پریفیکس مورد نظر با موفقیت در سرور \`\`${message.guild.name}\`\` تنظیم شد ${emoji.Accept} | **Prefix** : \`\`${newprefix}\`\``)
 
     channel_log.send({
-      embeds:[
+      embeds: [
         new MessageEmbed()
-        .setAuthor(`Prfix Log's | Guild Name : ${message.guild.name}` , message.guild.iconURL())
-        .setDescription(`New Prefix : \`\`${newprefix}\`\` ${emoji.Accept}`)
-        .setColor('#2f3136')
-        .setFooter(`Command Use : ${message.author.tag}` , message.author.displayAvatarURL())
+          .setAuthor(`Prfix Log's | Guild Name : ${message.guild.name}`, message.guild.iconURL())
+          .setDescription(`New Prefix : \`\`${newprefix}\`\` ${emoji.Accept}`)
+          .setColor('#2f3136')
+          .setFooter(`Command Use : ${message.author.tag}`, message.author.displayAvatarURL())
       ]
     })
     currentprefix = await prefixSchema.findOne({

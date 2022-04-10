@@ -15,9 +15,9 @@ module.exports = {
 
         const say = args.join(" ")
 
-        if (message.content.includes('@everyone')) return message.channel.send(`این کلمه را نمیتوان استفاده کرد ${emoji.smiling}`)
-        if (message.content.includes('@here')) return message.channel.send(`این کلمه را نمیتوان استفاده کرد ${emoji.smiling}`)
-        if (!say) return message.channel.send(`**لطفا متنی که میخواهید ارسال شود را تایپ کنید ${emoji.sepas}**`);
+        if (message.content.includes('@everyone')) return message.channel.send(`**این کلمه را نمیتوان استفاده کرد ${emoji.SmilingFace}**`)
+        if (message.content.includes('@here')) return message.channel.send(`**این کلمه را نمیتوان استفاده کرد ${emoji.SmilingFace}**`)
+        if (!say) return message.channel.send(`**لطفا متنی که میخواهید ارسال شود را تایپ کنید ${emoji.Sepas}**`);
         message.channel.send(say)
     }
 }

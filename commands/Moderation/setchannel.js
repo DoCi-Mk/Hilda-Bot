@@ -5,7 +5,7 @@ const channelSchema = require('../../models/actionlog')
 
 module.exports = {
     name: "setchannel",
-    aliases: [],
+    aliases: ['setlog'],
     description: "تنظیم چنل اکشن لاگ برای کامند های مدریشن",
     cooldown: 2,
     userPerms: ["ADMINISTRATOR"],

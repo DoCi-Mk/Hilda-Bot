@@ -20,7 +20,6 @@ module.exports = {
         const ActionChannelLog = client.channels.cache.get(channelLog.channel)
 
 
-
         if (message.guild.premiumTier === "NONE" || message.guild.premiumTier === "TIER_1") {
             return message.reply(`برای قرار دادن بنر در سرور خود باید **بوست سرور** خود را به ابتدا **لول 2 یا 3** برسانید ${emoji.Smile}`)
         }
@@ -33,7 +32,8 @@ module.exports = {
                 .setImage(args[0])
                 .setColor(config.DefaultColor)
             ]
-        })
+        }) 
+
         return message.reply({
             embeds: [
                 new MessageEmbed()

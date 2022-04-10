@@ -24,13 +24,13 @@ client.on('ready', async() => {
     client.user.setPresence({ status: "idle" });
     global.servers = client.guilds.cache.size
     console.log(`Ready! Logged in as ${client.user.tag} Now In ${client.guilds.cache.size} Server and doci konie :D`);
-    client.user.setActivity(`${global.servers} Guild | >help`, { type: "WATCHING" })
+    client.user.setActivity(`${config.Version} | .help`, { type: "WATCHING" })
 
 
     var checkservers = 1,
         checkthe_interval = checkservers * 60 * 1000; //in interval har 5 min check mishe va mitoind khodeton [5] ro ba harchi mikhayed change konid vali havaseton be api block discord bashe!
     setInterval(function() {
-        client.user.setActivity(`${global.servers} Guild | >help`, { type: "WATCHING" })
+        client.user.setActivity(`${config.Version} | .help`, { type: "WATCHING" })
     }, checkthe_interval);
 
     // Deleting old init message
