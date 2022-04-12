@@ -1,11 +1,11 @@
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js')
 const axios = require('axios');
-
+const config = require('../../config.json')
 module.exports = {
       name: "hack",
       aliases: [],
-      description: "kisses a mentioned user",
+      description: "هک کردن افراد",
       usage: ">hack <Mention User>",
       category: "فان و بازی",
       cooldown: 2,
@@ -111,7 +111,7 @@ module.exports = {
       const hack = new MessageEmbed()
       .setThumbnail(avatar)
       .setAuthor('هــک با موفقیت انجام شــد ✅')
-      .setColor(`RANDOM`)
+      .setColor(config.DefaultColor)
       .addFields(
         { name: '<a:868606020799324200:874374478874943519> جیمیل فرد مورد نظر', value: `${user.username}@gmail.com` , inline:true},
         { name: '<a:868606020799324200:874374478874943519> پسورد فرد مورد نظر', value: `-;35oB2vsqA#PC@` , inline:true},
@@ -119,7 +119,7 @@ module.exports = {
         { name: '<a:868606020799324200:874374478874943519> هک شده توسط', value: `${message.author}` , inline:true},
         { name: '<a:868606020799324200:874374478874943519> شغل فرد مورد نظر', value: `${shoghll}` , inline:true},
         { name: '<a:868606020799324200:874374478874943519> گوشی فرد مورد نظر', value: `${gooshi}` , inline:true},
-        { name: '<a:868606020799324200:874374478874943519> آموزش هک کردن', value: `[کلیک کنید](https://discord.gg/HQgE9pU6Ju)` , inline:true},
+        { name: '<a:868606020799324200:874374478874943519> آموزش هک کردن', value: `[کلیک کنید](${config.Support})` , inline:true},
         
       )
 
