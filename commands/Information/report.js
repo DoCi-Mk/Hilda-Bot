@@ -1,4 +1,4 @@
-const { MessageEmbed , MessageActionRow , MessageButton, Guild} = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton, Guild } = require('discord.js');
 const Discord = module.require("discord.js");
 const emoji = require('../../emoji')
 const client = require('../../index')
@@ -10,34 +10,43 @@ module.exports = {
   description: "گزارش مشکل در بات",
   userPerms: [],
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
-  
-  run: async (client, message, args ) => {
+
+  run: async (client, message, args) => {
 
     let prefix = await prefixdb.findOne({
-      guildid:message.guild.id
+      guildid: message.guild.id
     }).exec();
     if (prefix == null) {
       prefix = config.prefix
     } else {
       prefix = prefix.prefix;
     }
-
+    const Owner = config.Founder
     const reportchannel = client.channels.cache.get(config.Report);
+    const inviteLink = await message.channel.createInvite({ maxAge: 0, maxUses: 0, unique: true })
+    const row = new MessageActionRow().addComponents(
+      new MessageButton().setStyle('LINK').setLabel(`Server Link`).setURL(inviteLink.url)
+    )
+
     const report = args.join(" ");
     if (!report) {
-      return message.reply({ embeds: [
+      return message.reply({
+        embeds: [
           new MessageEmbed()
-          .setDescription(`لطفا **مشکلی** که میخواهید به ما گزارش دهید را هم بنویسید ${emoji.SmilingFace}`)
-          .setColor('#FF0000')
-          .setFooter(config.Footer)
-      ]});
+            .setDescription(`لطفا **مشکلی** که میخواهید به ما گزارش دهید را هم بنویسید ${emoji.SmilingFace}`)
+            .setColor('#FF0000')
+            .setFooter(config.Footer)
+        ]
+      });
     }
-    message.reply({ embeds: [
+    message.reply({
+      embeds: [
         new MessageEmbed()
-        .setDescription(`مشکل شما با موفقیت برای **تیم پشتیبانی** ارسال گردید . برای اطلاع از آخرین اخبار در [سرور پشتیبان](${config.Support}) جوین شوید ${emoji.Accept}`)
-        .setColor('#25a934')
-    ]}
-      
+          .setDescription(`مشکل شما با موفقیت برای **تیم پشتیبانی** ارسال گردید . برای اطلاع از آخرین اخبار در [سرور پشتیبان](${config.Support}) جوین شوید ${emoji.Accept}`)
+          .setColor('#25a934')
+      ]
+    }
+
     );
     const embed = new MessageEmbed()
       .setTitle(`> New Bug Report`)
@@ -45,12 +54,12 @@ module.exports = {
         dynamic: true,
         format: "png",
         size: 2048,
-       }))
+      }))
       .setDescription(`${emoji.ArrowRed} **${report}**\n\n${emoji.Dot}**Report By : **${message.author.tag}\n${emoji.Dot}**UserID : **${message.author.id}`)
-      .setFooter(`Bug Report From : ${message.guild.name}` , message.guild.iconURL())
+      .setFooter(`Bug Report From : ${message.guild.name}`, message.guild.iconURL())
       .setColor("RANDOM");
 
-    reportchannel.send({ embeds: [embed] , content: `${config.Founder.author}` });
+    reportchannel.send({ embeds: [embed], content: `<@${Owner}>`, components: [row] });
   },
   catch(error) {
     const errorlogs = client.channels.cache.get("911718981071667250");

@@ -93,7 +93,7 @@ module.exports = {
             value: 'moderation'
           },
           {
-            label: 'اطــلاعاتی',
+            label: 'اطلاعات بات',
             emoji: `${emoji.Etelaati_Help}`,
             // description: 'Baraye Didan Command Haye Etelaati Click Konid',
             value: 'information'
@@ -141,7 +141,7 @@ module.exports = {
       \n\`${prefix}setbanner\` ${emoji.Arrow_Help} **تنظیم کردن بنر سرور**\n
       \n\`${prefix}clear\` ${emoji.Arrow_Help} **پاک کردن پیام**\n
       \n\`${prefix}muteall\` ${emoji.Arrow_Help} **میوت کردن تمام افراد رو ویس**\n
-      \n\`${prefix}unmuteall\` ${emoji.Arrow_Help} *آنمیوت کردن تمام افراد رو ویس**\n
+      \n\`${prefix}unmuteall\` ${emoji.Arrow_Help} **آنمیوت کردن تمام افراد رو ویس**\n
       \n\`${prefix}defall\` ${emoji.Arrow_Help} **دیفن کردن تمام افراد رو ویس**\n
       \n\`${prefix}undefall\` ${emoji.Arrow_Help} **آندیفن کردن تمام افراد رو ویس**\n
       `)
