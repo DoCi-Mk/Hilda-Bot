@@ -11,6 +11,7 @@ LOG_CHANNEL = '904827498548850698'
 
 client.on('messageCreate', async message => {
   if (message.author.bot && (!message.channel.id === '886691835752370186' || !message.channel.id === 903761113177530398)) return;
+  let owner = config.Founder
 
   if ((!message.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES, Permissions.FLAGS.EMBED_LINKS) || !message.guild.me.permissionsIn(message.channel).has(Permissions.FLAGS.SEND_MESSAGES, Permissions.FLAGS.EMBED_LINKS))) return
   if (message.author.bot) return;
@@ -30,29 +31,44 @@ client.on('messageCreate', async message => {
   if (cmd.length == 0) return;
   let command = client.commands.get(cmd)
   if (!command) command = client.commands.get(client.aliases.get(cmd));
+  try {
+    if (command) {
 
+      //USER PERMISSION
+      if (!message.member.permissions.has(command.userPerms || [])) return message.reply(`${emoji.Denied} You Dont Have \`${command.userPerms || []}\` Permission`)
 
-  if (command) {
-    const messageRow = new MessageActionRow()
-      .addComponents(
-        new MessageButton()
-          .setEmoji(emoji.invite)
-          .setLabel(`Invite Again`)
-          .setStyle("LINK")
-          .setURL(config.onlynudes.inviteLink)
-      )
-    const messageEmbed = new MessageEmbed()
-      .setTitle(`Please use this command as a Slash Command!`)
-      .setColor(config.color.pink)
-      .setDescription(`
-      This command can only be used as a Slash Command. Please use \`/help\` instead to execute this command. Non-slash commands will be disappearing as of **August 2022** .
-Please note that **all bots** will be **required to** switch to Slash Commands by **August 2022**, so you better be getting used to them now!
-If the server you are in is not showing **__OnlyNudes__** slash commands you can ask an administrator of the server to invite the bot again by clicking on the **button** below . The bot **doesn't need to be kicked**, it just needs to be **invited again**!
-      `)
-      .setImage(`https://cdn.discordapp.com/attachments/969930430239342594/993927455750508696/helpMessageCreate.png`)
-    message.reply({
-      content: `HI`
-    })
+      //BOT PERMISSION
+      if (!message.guild.me.permissions.has(command.clientPerms || []))
+        return message.reply(`${emoji.Denied} Bot Doesn't Have \`${command.clientPerms || []}\` Permission , Please Give It To Bot`)
+
+      if (command.premium && !(await premiumSchema.findOne({ User: message.author.id })))
+        return message.reply(`این دســــتور فقط بــرای افــراد **VIP** فعال میباشد ${emoji.Smile}`)
+      if (command.disable) {
+        if (!owner.includes(message.author.id)) {
+          message.reply(`**ایــن دستــور در دســت تعمیر و فــعلا غیرفـعال اســت . پس از فــعالسازی در ســرور پشتیبانی به شما اطلاع میــدهیم ${emoji.Down}**\n${config.support}`)
+          return;
+        }
+      }
+      if (command.owneronly) {
+        if (!owner.includes(message.author.id)) {
+          message.channel.send(`${message.member} این کامند فقط برای **__سازندگان بات__** قابل استفاده است ${emoji.Smile}`)
+          return;
+        }
+      }
+
+    }
+    command.run(client, message, args, prefix)
+
+  } catch (err) {
+    console.error(err)
   }
 
-});
+
+
+
+
+
+
+
+
+})

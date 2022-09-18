@@ -32,8 +32,6 @@ const db = mongoose.connection;
 db.once('open', () => console.log(blue('MongoDB Connected')));
 db.on('error', (e) => console.log(e));
 
-client.slash = new Collection();
-
 
 process.on("unhandledRejection", console.error);
 

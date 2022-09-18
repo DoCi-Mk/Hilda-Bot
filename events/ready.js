@@ -8,7 +8,7 @@ client.on('ready', async () => {
 
   client.user.setPresence({ status: "idle" });
   global.servers = client.guilds.cache.size
-  console.log(green(`${client.user.tag} Ready!\nActive on ${client.guilds.cache.size} guild's!`));
+  console.log(red(`${client.user.tag} Ready!\nActive on ${client.guilds.cache.size} guild's!`));
   client.user.setActivity(`${config.version} | /help`, { type: "WATCHING" })
 
 })

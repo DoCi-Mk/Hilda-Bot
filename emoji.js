@@ -36,4 +36,11 @@ module.exports = {
     Cheshmak: "<:winkingface:962655573965414411>",
     Kissing: "<:Kissing:962658277534072842>",
     Danger: "<:Danger:1021079824678273084>",
+    Guild: "<:guilds:1021084721968582769>",
+    Blank: "<:blank:865002248383496203>",
+    Members: "<:members:1021121246563422290>",
+    Ping: "<:ping:1021121249776238602>",
+    Version: "<:version:1021121252502536333>",
+    Database: "<:database:1021121235318493284>",
+    Developer: "<:developer:1021127597213618206>"
 }

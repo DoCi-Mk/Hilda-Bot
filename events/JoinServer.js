@@ -11,8 +11,8 @@ client.on('guildCreate', async guild => {
 
     .addComponents(
         new MessageButton()
-        .setURL(`${config.Support}`)
-        .setLabel(`پشتیبانی ربات`)
+        .setURL(`${config.suppo}`)
+        .setLabel(`Support ${config.support}`)
         .setStyle('LINK')
     )
 
@@ -28,7 +28,7 @@ client.on('guildCreate', async guild => {
 
     const JoinGuild = new MessageEmbed()
         .setAuthor(guild.name, guild.iconURL())
-        .setDescription(`سلام <@${guild.ownerId}> ممنون که **هیلدا** را به سرور خودتون اد کردید \n\n برای دیدن تمام دستورات میتوانید از دستور \`help.\` استفاده کنید و اگر سوال یا مشکلی داشتید به سرور پشتیبانی آمده و مشکل خودتون رو با ما در میان بگذارید ${emoji.Sepas}`)
+        .setDescription(`سلام <@${guild.ownerId}> ممنون که **هیلدا** را به سرور خودتون اد کردید \n\n برای دیدن تمام دستورات میتوانید از دستور \`help/\` استفاده کنید و اگر سوال یا مشکلی داشتید به سرور پشتیبانی آمده و مشکل خودتون رو با ما در میان بگذارید ${emoji.Sepas}`)
         .setColor(config.DefaultColor)
 
     owner.send({ contents: `<@${guild.ownerId}>`, embeds: [JoinGuild], components: [row] })

@@ -10,24 +10,29 @@ client.on("interactionCreate", async (interaction) => {
     })).catch(() => { });
 
     const errorRow = new MessageActionRow()
-    .addComponents(
-      new MessageButton()
-      .setLabel(`${client.user.username} Support`)
-      .setStyle("LINK")
-      .setURL(config.support)
-    )
+      .addComponents(
+        new MessageButton()
+          .setLabel(`Support ${client.user.username}`)
+          .setStyle("LINK")
+          .setURL(config.support)
+      )
     const errorMessage = new MessageEmbed()
-    .setDescription(`${emoji.Danger} **این دستــور با مشکل مواجـه شده است ، برای اطلاعات بیشتر با پشتیبانی در ارتباط باشید**`)
-    .setColor(config.color.blue)
-    .setFooter(interaction.user.username, interaction.user.avatarURL())
+      .setDescription(`${emoji.Danger} **این دستــور با مشکل مواجـه شده است ، برای اطلاعات بیشتر با پشتیبانی در ارتباط باشید**`)
+      .setColor(config.color.blue)
+      .setFooter(interaction.user.username, interaction.user.avatarURL())
+
+
     const cmd = client.slash.get(interaction.commandName);
     if (!cmd)
-      return interaction.followUp({
-        embeds: [errorMessage],
-        components: [errorRow]
-      });
+      return await interaction
+        .followUp({
+          embeds: [errorMessage],
+          components: [errorRow]
+        })
+
     const guild = client.guilds.cache.get(interaction.guildId);
     const args = [];
+
 
 
     for (let option of interaction.options.data) {
@@ -41,7 +46,27 @@ client.on("interactionCreate", async (interaction) => {
         args.push(option.value);
     }
     interaction.member = interaction.guild.members.cache.get(interaction.user.id);
-    cmd.run(client, interaction, guild, args);
 
+    if (cmd) {
+      //USER PERMISSION
+      if (!interaction.member.permissions.has(cmd.userPerms || []))
+        return interaction.followUp({
+          content: `${emoji.Danger} You Dont Have \`${cmd.userPerms || []
+            }\` Permission`,
+          ephemeral: true,
+        });
+
+      //BOT PERMISSION
+      if (!interaction.guild.me.permissions.has(cmd.clientPerms || []))
+        return interaction.followUp({
+          content: `${emoji.Danger} Bot Doesn't Have \`${cmd.clientPerms || []
+            }\` Permission , Please Give It To Bot`,
+          ephemeral: true,
+        });
+    }
+
+    cmd.run(client, interaction, guild, args);
+    
   }
+  
 })
