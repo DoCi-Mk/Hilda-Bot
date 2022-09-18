@@ -35,4 +35,5 @@ module.exports = {
     Labtop_Help: "<:mantechnologistlightskintone_1f4:947563619187560528>",
     Cheshmak: "<:winkingface:962655573965414411>",
     Kissing: "<:Kissing:962658277534072842>",
+    Danger: "<:Danger:1021079824678273084>",
 }
