@@ -28,7 +28,7 @@ module.exports = {
       const statsMessage = new MessageEmbed()
         .setAuthor(`Hilda Bot Stat's`, client.user.avatarURL())
         .addFields(
-          { name: `${emoji.Guild}Developer`, value: `${emoji.Blank}${DoCi.tag}`, inline: false },
+          { name: `${emoji.Developer}Developer`, value: `${emoji.Blank}${DoCi.tag}`, inline: false },
           { name: `${emoji.Guild}Guild's`, value: `${emoji.Blank}${client.guilds.cache.size}`, inline: false },
           { name: `${emoji.Members}Member's`, value: `${emoji.Blank}${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, inline: false },
           { name: `${emoji.Database}Database`, value: `${emoji.Blank}Connected !`, inline: false },

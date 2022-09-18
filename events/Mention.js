@@ -37,7 +37,7 @@ client.on('messageCreate', async message => {
         const mentionText = new MessageEmbed()
             .setAuthor(client.user.username, client.user.avatarURL())
             .setThumbnail(client.user.avatarURL())
-            .setDescription(`**ســلام دوست من ${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی مانند تصویر زیر از دستور \`help/\`  استفاده کنی ${emoji.Sharab}**`)
+            .setDescription(`**ســلام دوست من اسم من __هیلدا__ است${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی مانند تصویر زیر از دستور \`hilda/\`  استفاده کنی ${emoji.Sharab}**`)
             .setColor(config.color.blue)
             .setImage("https://cdn.discordapp.com/attachments/942398678117793813/1021050704850321408/aebdc87b703df742.jpg")
         if (message.author.bot) return;

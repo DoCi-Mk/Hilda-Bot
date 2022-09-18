@@ -29,6 +29,9 @@ client.on("interactionCreate", async (interaction) => {
           embeds: [errorMessage],
           components: [errorRow]
         })
+        .catch((err) => {
+          console.log(err);
+        });
 
     const guild = client.guilds.cache.get(interaction.guildId);
     const args = [];

@@ -28,13 +28,13 @@ module.exports = {
     const invite = new MessageActionRow()
       .addComponents(
         new MessageButton()
-          .setURL(`${config.BotInvite}`)
+          .setURL(`${config.inviteLink}`)
           .setLabel(`دعوت ربات`)
           .setStyle('LINK')
       )
       .addComponents(
         new MessageButton()
-          .setURL(`${config.Support}`)
+          .setURL(`${config.support}`)
           .setLabel(`سرور پشتیبانی ربات`)
           .setStyle('LINK')
       )
@@ -42,7 +42,7 @@ module.exports = {
         new MessageButton()
           .setLabel(`رأی دادن به ربات`)
           .setStyle('LINK')
-          .setURL(config.Vote)
+          .setURL(config.vote)
       )
       .addComponents(
         new MessageButton()
@@ -206,7 +206,10 @@ module.exports = {
       .setImage('https://cdn.discordapp.com/attachments/871858377972654090/874702849718759434/home.jpg')
       .setFooter(`Hilda Bot | ${config.Version}`)
       .setTimestamp()
-    message.channel.send({ embeds: [Help], components: [row, invite] })
+    message.channel.send({
+      embeds: [Help],
+      //  components: [row, invite]
+    })
 
 
 
