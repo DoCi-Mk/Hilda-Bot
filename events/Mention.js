@@ -23,24 +23,29 @@ client.on('messageCreate', async message => {
         const row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
-                .setURL(`${config.BotInvite}`)
-                .setLabel(`دعوت ربات`)
-                .setStyle('LINK')
+                    .setURL(`${config.inviteLink}`)
+                    .setLabel(`Invite ${client.user.username}`)
+                    .setStyle('LINK')
             )
             .addComponents(
                 new MessageButton()
-                .setURL(`${config.Support}`)
-                .setLabel(`پشتیبانی ربات`)
-                .setStyle('LINK')
+                    .setURL(`${config.support}`)
+                    .setLabel(`Support ${client.user.username}`)
+                    .setStyle('LINK')
             )
 
-        const mention = new MessageEmbed()
-            .setAuthor('Do You Want To Use Me ?', 'https://cdn.discordapp.com/avatars/862062016344358913/b206fc212d5272270625ca4a78e9033a.webp?size=4096')
-            .setDescription(`Hi My Prefix In This Server Is **${prefix}**`)
-            .setColor('#30b4c2')
-            .setFooter(`Use ${prefix}help See All Command's`, message.author.displayAvatarURL({ dynamic: true }))
+        const mentionText = new MessageEmbed()
+            .setAuthor(client.user.username, client.user.avatarURL())
+            .setThumbnail(client.user.avatarURL())
+            .setDescription(`**ســلام دوست من ${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی مانند تصویر زیر از دستور \`help/\`  استفاده کنی ${emoji.Sharab}**`)
+            .setColor(config.color.blue)
+            .setImage("https://cdn.discordapp.com/attachments/942398678117793813/1021050704850321408/aebdc87b703df742.jpg")
         if (message.author.bot) return;
-        return message.reply({ content: `**ســلام دوست من ${emoji.Hi} فکر کنم میخوای ازم استفاده کنی که منشنم کردی ! \n برای دیدن تمام دستورات من میتونی از دستور \`help${prefix}\` یا \`help/\`  استفاده کنی ${emoji.Sharab}**`, components: [row] });
+        
+        return message.reply({
+            embeds: [mentionText],
+            components: [row]
+        });
     }
 
 

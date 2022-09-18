@@ -1,14 +1,17 @@
 {
-    "prefix": ".",
-    "Report": "961359249940824114",
-    "DefaultColor": "#3191af",
-    "ChannelLog": "961359230814810172",
-    "Version": "BETA",
-    "Founder": "500740143532212245",
-    "BotIcon": "https://cdn.discordapp.com/attachments/947475748426493984/947887386715652257/hilda_Logo.png",
-    "Support": "https://discord.gg/Ed2EHXunFA",
-    "Vote": "https://top.gg/bot/856599103960907786/vote",
-    "FalHafez": "https://discord.com/api/oauth2/authorize?client_id=860647959493345312&permissions=137439861953&scope=bot%20applications.commands",
-    "BotInvite": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=415805861216&scope=bot%20applications.commands",
-    "ModBotInvite": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=8&scope=bot%20applications.commands"
-  }
+  "prefix": ".",
+  "version": "2.0.0",
+  "channel": {
+    "report": "961359249940824114",
+    "otherLogs": "961359230814810172"
+  },
+  "color": {
+    "blue": "#3191af",
+    "purple": "#6a7eb8",
+    "darkBlue": "#243160"
+  },
+  "founder": "500740143532212245",
+  "support": "https://discord.gg/Ed2EHXunFA",
+  "vote": "https://top.gg/bot/856599103960907786/vote",
+  "inviteLink": "https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=415805861216&scope=bot%20applications.commands"
+}

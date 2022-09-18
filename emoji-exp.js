@@ -1,7 +1,6 @@
 module.exports = {
     success: "<:checkmarkbutton_2705:947563622916317254>",
     decline: "<:crossmark_274c:947563622769491988>",
-    // error: "<a:error:905015103097806878>", 
     discord_bot: "<:Bot1:904370196997881867><:Bot2:904370288274309200>",
     loading_2: "<a:loading2:904396238097616896>",
     loading_5: "<a:loading5:904438307876913294>",
