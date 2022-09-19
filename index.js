@@ -1,6 +1,7 @@
-const { Collection , Client , Discord } = require('discord.js')
+const { Collection , Client , Discord , WebhookClient } = require('discord.js')
 const { red, green, blue, yellow, cyan, greenBright, redBright, grey, yellowBright, cyanBright, black, blueBright } = require('chalk');
 const mongoose = require('mongoose');
+const config = require('./config.json')
 const token = process.env.TOKEN
 const fs = require('fs');
 const client = new Client({
@@ -32,8 +33,16 @@ const db = mongoose.connection;
 db.once('open', () => console.log(blue('MongoDB Connected')));
 db.on('error', (e) => console.log(e));
 
+const errorChannel = new WebhookClient({ url: "https://discord.com/api/webhooks/1021422890899476591/O7UThE9-4ikfNSmm-ygvfn_W48UBUQp5NliQyKzJbnc4ue8c-gv8xHOsxSR1juHKxFoX" });
+process.on("unhandledRejection", async (err) => {
+    console.log(err);
+    errorChannel.send(`Unhandled Rejection: \`\`\`${err.stack}\`\`\``);
+});
 
-process.on("unhandledRejection", console.error);
+process.on("uncaughtException", async (err) => {
+    console.log(err);
+    errorChannel.send(`Unhandled Exception: \`\`\`${err.stack}\`\`\``);
+});
 
 
 client.login(token)

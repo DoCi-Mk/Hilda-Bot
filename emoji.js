@@ -5,7 +5,7 @@ module.exports = {
     Sharab: "<:wineglass_1f377:947563606734667827>",
     Smile: "<:Smlie:905448658756055100>",
     Down: "<:Paeen:905451102437257216>",
-    Accept: "<:checkmarkbutton_2705:947563622916317254>",
+    Accept: "<:accept:1021418380605014068>",
     Denied: "<:crossmark_274c:947563622769491988>",
     Ajab: "<:ok_bfhm:948197442283794493>",
     Microphone: "<:Microphone:961733108070223943>",

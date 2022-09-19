@@ -69,7 +69,7 @@ client.on("interactionCreate", async (interaction) => {
 
       cmd.run(client, interaction, guild, args);
     } catch (err) {
-      const channel = client.channels.cache.get("1021172769297268746")
+      const channel = client.channels.cache.get(config.channel.error)
       channel.send({
         embeds: [
           new MessageEmbed()
