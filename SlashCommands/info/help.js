@@ -2,6 +2,8 @@ const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = req
 const emoji = require('../../emoji')
 const config = require('../../config.json')
 const update = require('../../updatelog.json')
+const moment = require("moment");
+require("moment-duration-format");
 
 
 module.exports = {
@@ -9,6 +11,8 @@ module.exports = {
   description: "دستورات ربات",
 
   run: async (client, interaction, args, message) => {
+
+    const duration = moment.duration(client.uptime).format(" D [Day's], H [Hour's], m [Minute's], s [Second's]");
 
     const inviteRow = new MessageActionRow()
       .addComponents(
@@ -61,7 +65,7 @@ module.exports = {
       .setThumbnail(client.user.avatarURL())
       .setAuthor(`Hilda Bot Help's`, client.user.avatarURL())
       .setColor(config.color.blue)
-      .setDescription(`**سلامـ اسمـ من __هیلـدا__ اسـت ${emoji.Hi}\n\n> مَـن کیَـم ؟\nاگه بخوام بهتون بگم من __اولین بات ایونت__ ایرانی هستم که انواع بازی ها و ایونت هایی که باعث گذروندن وقت شما میشه رو دارم ، خوشحال میشم اگه ایده جدیدی هم داریداز طریق دستور \`idea/\`بهم بگید تا براتون اضافه کنم\n\n${emoji.Cheshmak} برای استفاده از من کافیه بر روی منوی زیر کلیک کنی تا تمام دستورات من در بخش های مختلف رو ببینی**`)
+      .setDescription(`**سلامـ اسمـ من __هیلـدا__ اسـت ${emoji.Hi}\n\n> مَـن کیَـم ؟\nاگه بخوام بهتون بگم من __اولین بات ایونت__ ایرانی هستم که انواع بازی ها و ایونت هایی که باعث گذروندن وقت شما میشه رو دارم ، خوشحال میشم اگه ایده جدیدی هم داریداز طریق دستور \`idea/\`بهم بگید تا براتون اضافه کنم\n\n${emoji.Smile} برای استفاده از من کافیه بر روی منوی زیر کلیک کنی تا تمام دستورات من در بخش های مختلف رو ببینی**`)
       .setImage("https://cdn.discordapp.com/attachments/961264596440723536/1021132771642585088/help.jpg")
 
     const eventHelp = new MessageEmbed()
@@ -120,12 +124,13 @@ module.exports = {
       const statsEmbed = new MessageEmbed()
         .setAuthor(`Hilda Bot Stat's`, client.user.avatarURL())
         .addFields(
-          { name: `${emoji.Developer}Developer`, value: `${emoji.Blank}${DoCi.tag}`, inline: false },
-          { name: `${emoji.Guild}Guild's`, value: `${emoji.Blank}${client.guilds.cache.size}`, inline: false },
-          { name: `${emoji.Members}Member's`, value: `${emoji.Blank}${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, inline: false },
-          { name: `${emoji.Database}Database`, value: `${emoji.Blank}Connected !`, inline: false },
-          { name: `${emoji.Ping}Ping`, value: `${emoji.Blank}${client.ws.ping}`, inline: false },
-          { name: `${emoji.Version}Version`, value: `${emoji.Blank}${config.version}`, inline: false },
+          { name: `${emoji.Developer} Developer`, value: `${emoji.Blank}${DoCi.tag}`, inline: false },
+          { name: `${emoji.Guild} Guild's`, value: `${emoji.Blank}${client.guilds.cache.size}`, inline: false },
+          { name: `${emoji.Members} Member's`, value: `${emoji.Blank}${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, inline: false },
+          { name: `${emoji.Database} Database`, value: `${emoji.Blank}Connected !`, inline: false },
+          { name: `${emoji.Ping} Ping`, value: `${emoji.Blank}${client.ws.ping}`, inline: false },
+          { name: `${emoji.Version} Version`, value: `${emoji.Blank}${config.version}`, inline: false },
+          { name: `${emoji.Uptime} Uptime`, value: `${emoji.Blank}\`${duration}\``, inline: false },
         )
         .setColor(config.color.blue)
         .setThumbnail(client.user.avatarURL())

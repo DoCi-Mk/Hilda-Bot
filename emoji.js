@@ -44,5 +44,5 @@ module.exports = {
     Database: "<:database:1021121235318493284>",
     Developer: "<:developer:1021127597213618206>",
     Reply: "<:4478reply:1021151956300996618>",
-    
+    Uptime: "<:uptime:1021410370864304199>",
 }

@@ -1,6 +1,11 @@
 const { MessageActionRow, MessageEmbed, MessageButton } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
+const moment = require("moment");
+require("moment-duration-format");
+
+
+
 
 
 module.exports = {
@@ -10,6 +15,8 @@ module.exports = {
   clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
 
   run: async (client, interaction, args) => {
+    const duration = moment.duration(client.uptime).format(" D [Day's], H [Hour's], m [Minute's], s [Second's]");
+
     const row = new MessageActionRow()
       .addComponents(
         new MessageButton()
@@ -28,12 +35,13 @@ module.exports = {
       const statsMessage = new MessageEmbed()
         .setAuthor(`Hilda Bot Stat's`, client.user.avatarURL())
         .addFields(
-          { name: `${emoji.Developer}Developer`, value: `${emoji.Blank}${DoCi.tag}`, inline: false },
-          { name: `${emoji.Guild}Guild's`, value: `${emoji.Blank}${client.guilds.cache.size}`, inline: false },
-          { name: `${emoji.Members}Member's`, value: `${emoji.Blank}${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, inline: false },
-          { name: `${emoji.Database}Database`, value: `${emoji.Blank}Connected !`, inline: false },
-          { name: `${emoji.Ping}Ping`, value: `${emoji.Blank}${client.ws.ping}`, inline: false },
-          { name: `${emoji.Version}Version`, value: `${emoji.Blank}${config.version}`, inline: false },
+          { name: `${emoji.Developer} Developer`, value: `${emoji.Blank}${DoCi.tag}`, inline: false },
+          { name: `${emoji.Guild} Guild's`, value: `${emoji.Blank}${client.guilds.cache.size}`, inline: false },
+          { name: `${emoji.Members} Member's`, value: `${emoji.Blank}${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, inline: false },
+          { name: `${emoji.Database} Database`, value: `${emoji.Blank}Connected !`, inline: false },
+          { name: `${emoji.Ping} Ping`, value: `${emoji.Blank}${client.ws.ping}`, inline: false },
+          { name: `${emoji.Version} Version`, value: `${emoji.Blank}${config.version}`, inline: false },
+          { name: `${emoji.Uptime} Uptime`, value: `${emoji.Blank}\`${duration}\``, inline: false },
         )
         .setColor(config.color.blue)
         .setThumbnail(client.user.avatarURL())

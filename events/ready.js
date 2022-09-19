@@ -6,6 +6,10 @@ const config = require('../config.json')
 
 client.on('ready', async () => {
 
+
+
+  
+
   let targetGuild = client.guilds.cache.get("933722860856430722");
 
   //Update Channel
