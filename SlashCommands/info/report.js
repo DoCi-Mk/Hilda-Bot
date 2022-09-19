@@ -5,44 +5,44 @@ const v = require('../../config.json')
 
 
 module.exports = {
-    name : "report",
-    description : "Report Problem For Bot",
-    options: [
-		{
-			name: 'text',
-			description: 'Write Problem For Bot',
-			type: 3,
-			required: true,
-		},
-    ],
+  name: "report",
+  description: "گزارش باگــ",
+  options: [
+    {
+      name: 'text',
+      description: 'گزارش خودتون را بنویسیــد',
+      type: 3,
+      required: true,
+    },
+  ],
 
   run: async (client, interaction, args, message) => {
-    const reportchannel = client.channels.cache.get("905828659041038376");
+    const reportChannel = client.channels.cache.get(config.channel.report);
     const report = interaction.options.getString('text');
-    if (!report) {
-      return interaction.editReply({ embeds: [
-          new MessageEmbed()
-          .setDescription(`${emoji.danger} Please Send Your Report Along With The Text`)
-          .setColor('#FF0000')
-      ]});
-    }
-    interaction.editReply({ embeds: [
+
+    interaction.editReply({
+      embeds: [
         new MessageEmbed()
-        .setDescription(`${emoji.tik} Your Report Has Been Submitted . We Will Be In Touch With You in Case Of Any Problems`)
-        .setColor('#25a934')
-    ]}
-      
+          .setDescription(`${emoji.Accept} **گزارش شما با موفقیت ثبت شــد ، درصورت تاییـد دولوپر ها بهتون پیغام میدهند**`)
+          .setColor(config.color.blue)
+      ]
+    }
+
     );
     const embed = new MessageEmbed()
-      .setTitle(`${emoji.bug} New Bug Report`)
       .setThumbnail(interaction.user.displayAvatarURL({
         dynamic: true,
         format: "png",
         size: 2048,
-       }))
-      .setDescription(`${emoji.arrow_red} **${report}**\n\n${emoji.dot1}**Report By : **${interaction.user.tag}\n${emoji.dot1}**UserID : **${interaction.user.id}`)
-      .setFooter(`Bug Report From : ${interaction.guild.name}` , interaction.guild.iconURL())
-      .setColor("RANDOM");
+      }))
+      .addFields([
+        { name: `Channel :`, value: `${interaction.channel.id} | ${interaction.channel.name}`, inline: false },
+        { name: `Guild :`, value: `${interaction.guild.id} | ${interaction.guild.name}`, inline: false },
+        { name: `User :`, value: `${interaction.user.id} | \`${interaction.user.tag}\``, inline: false },
+      ])
+      .setFooter(`${client.user.username} | ${config.version}`)
+      .setColor(config.color.blue);
 
-    reportchannel.send({ embeds: [embed] , content: '<@890926764027691028> | <@851218809204768788>' });
-  }}
+    reportChannel.send({ embeds: [embed], content: `${report}` });
+  }
+}

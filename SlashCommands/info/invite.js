@@ -9,7 +9,6 @@ module.exports = {
 
   run: async (client, interaction, args, message) => {
 
-
     const row = new MessageActionRow()
       .addComponents(
         new MessageButton()
@@ -30,7 +29,6 @@ module.exports = {
           .setStyle('LINK')
       )
 
-
     const invite = new MessageEmbed()
     .setAuthor(client.user.username , client.user.avatarURL())
     .setDescription(`**خوشحالم که میخوای منو به سرورت دعوت کنی (:\nبرای دعوت من به سرورت کافیه روی دکمه زیر که نوشته __Invite ${client.user.username}__ کلیک کنی**`)
@@ -38,6 +36,5 @@ module.exports = {
     .setImage('https://cdn.discordapp.com/attachments/961264596440723536/1021132771915210803/invite.jpg')
 
     interaction.followUp({ embeds: [invite], components: [row] })
-
   }
 };
