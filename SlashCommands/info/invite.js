@@ -1,11 +1,11 @@
 const { MessageEmbed, MessageActionRow, MessageSelectMenu, MessageButton } = require("discord.js");
 const emoji = require('../../emoji')
 const client = require('../../index')
-const v = require('../../config.json')
 const config = require('../../config.json')
+
 module.exports = {
   name: "invite",
-  description: "Invite The Bot",
+  description: "دعوت ربات",
 
   run: async (client, interaction, args, message) => {
 
@@ -13,32 +13,29 @@ module.exports = {
     const row = new MessageActionRow()
       .addComponents(
         new MessageButton()
-          .setURL(`${config.botinvite}`)
-          .setLabel(`Invite OnlyNude Bot`)
+          .setURL(`${config.inviteLink}`)
+          .setLabel(`Invite ${client.user.username}`)
           .setStyle('LINK')
-          .setEmoji(`${emoji.link2}`)
       )
       .addComponents(
         new MessageButton()
-          .setURL(`https://discord.gg/Ed2EHXunFA`)
-          .setLabel(`Support OnlyNude Bot`)
+          .setURL(config.support)
+          .setLabel(`Support ${client.user.username}`)
           .setStyle('LINK')
-          .setEmoji(`${emoji.Observers}`)
       )
       .addComponents(
         new MessageButton()
-          .setLabel(`Vote Bot `)
+        .setURL(config.vote)
+          .setLabel(`Vote ${client.user.username}`)
           .setStyle('LINK')
-          .setEmoji(`${emoji.Vote}`)
-          .setURL('https://discordbotlist.com/bots/onlynudes/upvote')
       )
 
 
     const invite = new MessageEmbed()
-    .setAuthor('Do You Want To Add me?' , 'https://cdn.discordapp.com/emojis/843845378352873492.gif')
-    .setDescription(`${emoji.dot1} Invite **OnlyNude** Bot \n ${emoji.blank}${emoji.arrow} [**Invite Bot**](${config.botinvite})\n${emoji.blank}${emoji.arrow} [**Server Support**](https://discord.gg/6v5CBpRkTr)\n\n${emoji.dot1}You Can Invite **My Other Bot** Click Link Bellow : \n ${emoji.blank}${emoji.arrow} [**Invite Linker Bot**](https://discord.com/api/oauth2/authorize?client_id=839194473018818611&permissions=0&scope=bot) / [**Invite Hilda Bot**](https://discord.com/api/oauth2/authorize?client_id=856599103960907786&permissions=140693073600&scope=bot%20applications.commands)`)
-    .setColor('RANDOM')
-    .setImage('https://cdn.discordapp.com/attachments/904392250170151012/905568905643327508/banner.png')
+    .setAuthor(client.user.username , client.user.avatarURL())
+    .setDescription(`**خوشحالم که میخوای منو به سرورت دعوت کنی (:\nبرای دعوت من به سرورت کافیه روی دکمه زیر که نوشته __Invite ${client.user.username}__ کلیک کنی**`)
+    .setColor(config.color.blue)
+    .setImage('https://cdn.discordapp.com/attachments/961264596440723536/1021132771915210803/invite.jpg')
 
     interaction.followUp({ embeds: [invite], components: [row] })
 
