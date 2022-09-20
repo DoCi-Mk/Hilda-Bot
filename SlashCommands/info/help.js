@@ -1,7 +1,6 @@
 const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
-const update = require('../../updatelog.json')
 const moment = require("moment");
 require("moment-duration-format");
 
