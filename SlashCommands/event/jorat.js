@@ -1,21 +1,22 @@
 const { MessageActionRow, MessageEmbed, MessageButton } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
-const Data = require('../../Data/haghighat.json')
+const Data = require('../../Data/jorat.json')
 
 module.exports = {
-    name: "haghighat",
+    name: "jorat",
     category: "Event's",
-    description: "سوالات جنجالی برای حقیقت",
+    description: "سوالات جنجالی برای جرئت",
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
+
 
     run: async (client, interaction, args, message) => {
         var Text = Data[Math.floor(Math.random() * Data.length)];
         interaction.followUp({ embeds: [
             new MessageEmbed()
             .setColor(config.color.blue)
-            .setDescription(`${emoji.Haghighat}〢**${Text}**`)
+            .setDescription(`${emoji.Jorat}〢**${Text}**`)
         ] })
     }
 }
