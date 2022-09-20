@@ -117,8 +117,8 @@ module.exports = {
         { name: `${emoji.Karbordi_Help}\`/fal\``, value: `${emoji.Reply}〢پاک کردن پیام های چت`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/gif-fun\``, value: `${emoji.Reply}〢قفل کردن چنل`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/hadis\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
-        { name: `${emoji.Karbordi_Help}\`/profile-boy\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
-        { name: `${emoji.Karbordi_Help}\`/profile-girl\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
+        { name: `${emoji.Karbordi_Help}\`/boy-profile\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
+        { name: `${emoji.Karbordi_Help}\`/girl-profile\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
       )
 
     client.users.fetch("500740143532212245").then(DoCi => {
