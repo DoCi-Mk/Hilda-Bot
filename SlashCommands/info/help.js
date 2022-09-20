@@ -76,6 +76,8 @@ module.exports = {
         { name: `${emoji.Event_Help}\`/jorat\``, value: `${emoji.Reply}〢بازی هیجانی و جرئت`, inline: true },
         { name: `${emoji.Event_Help}\`/haghighat\``, value: `${emoji.Reply}〢بازی هیجانی و حقیقت`, inline: true },
         { name: `${emoji.Event_Help}\`/sandalidagh\``, value: `${emoji.Reply}〢بازی هیجانی و +18 صندلی داغ`, inline: true },
+        { name: `${emoji.Event_Help}\`/deklame\``, value: `${emoji.Reply}〢متن های دکلمه آماده`, inline: true },
+        { name: `${emoji.Event_Help}\`/deklamemusic\``, value: `${emoji.Reply}〢ارسال متن دکلمه + پخش موزیک دکلمه`, inline: true },
       )
 
     const funHelp = new MessageEmbed()
