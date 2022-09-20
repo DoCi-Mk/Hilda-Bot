@@ -19,6 +19,10 @@ module.exports = {
   run: async (client, interaction, args, message) => {
     const reportChannel = client.channels.cache.get(config.channel.report);
     const report = interaction.options.getString('text');
+    const inviteLink = await interaction.channel.createInvite({ maxAge: 0, maxUses: 0, unique: true })
+    const row = new MessageActionRow().addComponents(
+      new MessageButton().setStyle('LINK').setLabel(`${interaction.guild.name} Invite link`).setURL(inviteLink.url)
+    )
 
     interaction.editReply({
       embeds: [
@@ -43,6 +47,6 @@ module.exports = {
       .setFooter(`${client.user.username} | ${config.version}`)
       .setColor(config.color.blue);
 
-    reportChannel.send({ embeds: [embed], content: `${report}` });
+    reportChannel.send({ embeds: [embed], content: `${report}` , components: [row] });
   }
 }

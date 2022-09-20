@@ -7,40 +7,17 @@ const update = require('../../updatelog.json')
 
 module.exports = {
     name : "updatelog",
-    description : "Recent Bot Updates",
+    description : "تاریخچه آپدیت های بات",
 
   run: async (client, interaction, args) => {
 
-    const invite = new MessageActionRow()
-    .addComponents(
-      new MessageButton()
-        .setURL(`${config.botinvite}`)
-        .setLabel(`Invite OnlyNude Bot`)
-        .setStyle('LINK')
-    )
-    .addComponents(
-      new MessageButton()
-      .setURL(v.support)
-        .setLabel(`Support OnlyNude Bot`)
-        .setStyle('LINK')
-    )
-    .addComponents(
-      new MessageButton()
-        .setURL(`${v.vote}`)
-        .setLabel(`Vote OnlyNude Bot`)
-        .setStyle('LINK')
-    )
-
-
-
-
-
-  const update_log = new MessageEmbed()
-    .setAuthor(`Update Log • Curnet Version : ${v.version_bot}`)
+  const updateLog = new MessageEmbed()
+    .setAuthor(`آپدیــت های جـدید ربات` , client.user.avatarURL())
     .setDescription(`\`\`\`${update.update}\`\`\``)
-    .setColor('#2f3136')
-    .setFooter('If you have questions about the latest bot updates, join the support server')
+    .setColor(config.color.blue)
+    .setImage("https://cdn.discordapp.com/attachments/1021307160497496084/1021666581115326484/51e58d900a71662c.png")
+    .setFooter(`${client.user.username} | Version : ${config.version}`, client.user.avatarURL())
 
-  interaction.editReply({ embeds: [update_log] , components: [invite] })
+  interaction.editReply({ embeds: [updateLog] })
 
   }}
