@@ -1,8 +1,7 @@
 const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
-const v = require('../../config.json')
-const axios = require("axios");
+
 
 module.exports = {
     name: "shoharyab",
@@ -108,11 +107,11 @@ module.exports = {
             .setTitle(`👨〢شـوهــر آیــنده شـما`)
             .setThumbnail(pictures[Math.floor(Math.random() * pictures.length)])
             .addFields(
-                { name: `نام `, value: `${name[Math.floor(Math.random() * name.length)]}`, inline: true },
-                { name: `سـن`, value: `${Math.floor(Math.random() * 45)}`, inline: true },
+                { name: `${emojiShoharyab.nameEmoji}نام `, value: `${name[Math.floor(Math.random() * name.length)]}`, inline: true },
+                { name: `${emojiShoharyab.senEmoji} سـن`, value: `${Math.floor(Math.random() * 45)}`, inline: true },
                 { name: `\u200B`, value: '\u200B' },
-                { name: `سـایز`, value: `${Math.floor(Math.random() * 20)} **CM**`, inline: true },
-                { name: `شـغـل`, value: `${shoghl[Math.floor(Math.random() * shoghl.length)]}`, inline: true },
+                { name: `${emojiShoharyab.sexEmoji} سـایز`, value: `${Math.floor(Math.random() * 20)} **CM**`, inline: true },
+                { name: `${emojiShoharyab.shoghlEmoji} شـغـل`, value: `${shoghl[Math.floor(Math.random() * shoghl.length)]}`, inline: true },
                 { name: `\u200B`, value: '\u200B' },
                 { name: `📏 قـد`, value: `${Math.floor(Math.random() * 200)}`, inline: true },
                 { name: `🧭 وزن`, value: `${Math.floor(Math.random() * 100)} کـیلـوگـرم`, inline: true },
