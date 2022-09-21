@@ -1,6 +1,8 @@
 const { Collection , Client , Discord , WebhookClient } = require('discord.js')
 const { red, green, blue, yellow, cyan, greenBright, redBright, grey, yellowBright, cyanBright, black, blueBright } = require('chalk');
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+require('dotenv').config()
 const config = require('./config.json')
 const token = process.env.TOKEN
 const fs = require('fs');

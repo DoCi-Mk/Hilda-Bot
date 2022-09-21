@@ -29,7 +29,7 @@ module.exports = {
             .setColor(config.color.blue)
 
         if (!channel) return interaction.followUp({ embeds: [errorVoice] })
-        audioIndex = Math.floor(Math.random() * 5)
+        audioIndex = Math.floor(Math.random() * 1)
         const player = DiscordVoice.createAudioPlayer();
         const resource = DiscordVoice.createAudioResource((audios[audioIndex]))
         const connection = DiscordVoice.joinVoiceChannel({
@@ -48,7 +48,7 @@ module.exports = {
                 new MessageEmbed()
                     .setColor(config.color.blue)
                     .setImage("https://cdn.discordapp.com/attachments/961264596440723536/1021739269502554122/bafda33cbb9dad2b.jpg")
-                    .setDescription(`*${Desc.deklame}**`)
+                    .setDescription(`**${Desc.deklame}**`)
                     .setFooter(`${interaction.user.username}`, interaction.user.displayAvatarURL({ dynamic: true }))
             ]
         })
