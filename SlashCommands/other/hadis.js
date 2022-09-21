@@ -1,11 +1,12 @@
 const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = require('discord.js')
 const emoji = require('../../emoji')
 const config = require('../../config.json')
+const v = require('../../config.json')
 const axios = require("axios");
 
 module.exports = {
-    name: "danesatni",
-    description: "دانستنی های دنیا",
+    name: "hadis",
+    description: "حدیث و سخن بزرگان",
     category: "Other",
     userPerms: [],
     clientPerms: ["SEND_MESSAGES", "EMBED_LINKS"],
@@ -14,18 +15,18 @@ module.exports = {
 
         let getInfo3 = async () => {
 
-            let response3 = await axios.get('http://api.codebazan.ir/danestani/');
+            let response3 = await axios.get('http://api.codebazan.ir/hadis/');
             let info3 = response3.data;
             return info3;
         };
-        let danestaniText = await getInfo3();
+        let hadisText = await getInfo3();
 
         interaction.followUp({
             embeds: [
                 new MessageEmbed()
                 .setColor(config.color.blue)
-                .setDescription(`**آیا میدانستید ؟** ${danestaniText}`)
+                .setDescription(`**بزرگی میفرمایـد** ${hadisText}`)
             ]
         })
-    }
+    },
 }
