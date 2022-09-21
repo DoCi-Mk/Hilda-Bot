@@ -99,13 +99,14 @@ module.exports = {
       .setColor(config.color.blue)
       .setFooter(`برای استفاده از دستور ها کافی است آن هارا در سرور اجرا و ارسال کنید`, interaction.user.displayAvatarURL())
       .setThumbnail(client.user.avatarURL())
-      .addFields(
-        { name: `${emoji.Mod_Help}\`/setlog [Channel]\``, value: `${emoji.Reply}〢تنظیم چنل لاگ برای تاریخچه عملکرد ربات`, inline: true },
-        { name: `${emoji.Mod_Help}\`/setbanner\``, value: `${emoji.Reply}〢تنظیم بنر سرور`, inline: true },
-        { name: `${emoji.Mod_Help}\`/clear\``, value: `${emoji.Reply}〢پاک کردن پیام های چت`, inline: true },
-        { name: `${emoji.Mod_Help}\`/lock\``, value: `${emoji.Reply}〢قفل کردن چنل`, inline: true },
-        { name: `${emoji.Mod_Help}\`/unlock\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
-      )
+      // .addFields(
+      //   { name: `${emoji.Mod_Help}\`/setlog [Channel]\``, value: `${emoji.Reply}〢تنظیم چنل لاگ برای تاریخچه عملکرد ربات`, inline: true },
+      //   { name: `${emoji.Mod_Help}\`/setbanner\``, value: `${emoji.Reply}〢تنظیم بنر سرور`, inline: true },
+      //   { name: `${emoji.Mod_Help}\`/clear\``, value: `${emoji.Reply}〢پاک کردن پیام های چت`, inline: true },
+      //   { name: `${emoji.Mod_Help}\`/lock\``, value: `${emoji.Reply}〢قفل کردن چنل`, inline: true },
+      //   { name: `${emoji.Mod_Help}\`/unlock\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
+      // )
+      .setDescription(`**بزودی اضافه میشود**`)
 
     const otherHelp = new MessageEmbed()
       .setColor(config.color.blue)

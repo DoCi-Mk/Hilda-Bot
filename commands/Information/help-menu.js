@@ -2,7 +2,6 @@ const { MessageActionRow, MessageEmbed, MessageButton, MessageSelectMenu } = req
 const emoji = require('../../emoji')
 const prefixdb = require('../../models/prefix')
 const config = require('../../config.json')
-const update = require('../../updatelog.json')
 const pack = require('../../package.json')
 
 module.exports = {
