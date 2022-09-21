@@ -113,7 +113,7 @@ module.exports = {
       .setThumbnail(client.user.avatarURL())
       .addFields(
         { name: `${emoji.Karbordi_Help}\`/avatar\``, value: `${emoji.Reply}〢تنظیم چنل لاگ برای تاریخچه عملکرد ربات`, inline: true },
-        { name: `${emoji.Karbordi_Help}\`/fact\``, value: `${emoji.Reply}〢تنظیم بنر سرور`, inline: true },
+        { name: `${emoji.Karbordi_Help}\`/danestani\``, value: `${emoji.Reply}〢تنظیم بنر سرور`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/fal\``, value: `${emoji.Reply}〢پاک کردن پیام های چت`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/gif-fun\``, value: `${emoji.Reply}〢قفل کردن چنل`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/hadis\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
