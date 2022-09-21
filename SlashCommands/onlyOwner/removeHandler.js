@@ -4,7 +4,7 @@ const config = require('../../config.json')
 const emoji = require('../../emoji')
 
 module.exports = {
-    name: "handler-rem",
+    name: "remove-handler",
     description: "حذف کردن هندلر",
     category: "OnlyOwner",
     onlyOwner: true,

@@ -4,7 +4,7 @@ const config = require('../../config.json')
 const emoji = require('../../emoji')
 
 module.exports = {
-    name: "handler-add",
+    name: "add-handler",
     description: "اضافه کردن به هندلر",
     category: "OnlyOwner",
     onlyOwner: true,
