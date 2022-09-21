@@ -13,7 +13,7 @@ module.exports = {
     options: [
         {
             name: 'user',
-            description: 'گزارش خودتون را بنویسیــد',
+            description: 'کاربر رو وارد کنید',
             type: 6,
             required: false,
         },

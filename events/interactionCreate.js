@@ -4,6 +4,7 @@ const emoji = require('../emoji')
 const config = require('../config.json')
 
 client.on("interactionCreate", async (interaction) => {
+  const owner = config.founder
   if (interaction.isCommand()) {
     await interaction.deferReply(({
       ephemeral: false
@@ -49,6 +50,16 @@ client.on("interactionCreate", async (interaction) => {
       }
       interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 
+      if (cmd.onlyOwner) {
+        if (!owner.includes(interaction.user.id)) {
+          interaction.followUp({
+            content: `${emoji.Danger} **این دسـتور فقط برای سازندگان بـات قابل استفاده میباشـد**`,
+            ephemeral: true,
+          });
+          return;
+        }
+      }
+
       if (cmd) {
         //USER PERMISSION
         if (!interaction.member.permissions.has(cmd.userPerms || []))
@@ -73,8 +84,8 @@ client.on("interactionCreate", async (interaction) => {
       channel.send({
         embeds: [
           new MessageEmbed()
-          .setColor("WHITE")
-          .setDescription(err)
+            .setColor("WHITE")
+            .setDescription(err)
         ]
       })
     }
