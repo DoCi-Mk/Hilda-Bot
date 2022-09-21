@@ -88,10 +88,10 @@ module.exports = {
         { name: `${emoji.Sargarmi_Help}\`/aya [Question]\``, value: `${emoji.Reply}〢بازی پرسش و پاسه با ربات`, inline: true },
         { name: `${emoji.Sargarmi_Help}\`/zanyab\``, value: `${emoji.Reply}〢پیدا کردن زن خوشگل برای شما`, inline: true },
         { name: `${emoji.Sargarmi_Help}\`/shoharyab\``, value: `${emoji.Reply}〢پیدا کردن شوهر خوشگل برای شما`, inline: true },
-        { name: `${emoji.Sargarmi_Help}\`/s-discord\``, value: `${emoji.Reply}〢درصد اعتیاد شما به دیسکورد`, inline: true },
-        { name: `${emoji.Sargarmi_Help}\`/s-lesbian\``, value: `${emoji.Reply}〢درصد لز بودن شما`, inline: true },
-        { name: `${emoji.Sargarmi_Help}\`/s-gay\``, value: `${emoji.Reply}〢درصد گِی بودن شما`, inline: true },
-        { name: `${emoji.Sargarmi_Help}\`/s-haval\``, value: `${emoji.Reply}〢مقدار هول بودن شما دوست عزیز`, inline: true },
+        { name: `${emoji.Sargarmi_Help}\`/discordsanj\``, value: `${emoji.Reply}〢درصد اعتیاد شما به دیسکورد`, inline: true },
+        { name: `${emoji.Sargarmi_Help}\`/lessanj\``, value: `${emoji.Reply}〢درصد لز بودن شما`, inline: true },
+        { name: `${emoji.Sargarmi_Help}\`/gaysanj\``, value: `${emoji.Reply}〢درصد گِی بودن شما`, inline: true },
+        { name: `${emoji.Sargarmi_Help}\`/havalsanj\``, value: `${emoji.Reply}〢مقدار هول بودن شما دوست عزیز`, inline: true },
         { name: `${emoji.Sargarmi_Help}\`/love [User]\``, value: `${emoji.Reply}〢درصد علاقه شما با ...`, inline: true },
       )
 
