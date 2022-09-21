@@ -179,7 +179,7 @@ module.exports = {
             { name: '<:853973852672360468:862366006458187786> سن خانوم', value: `${senn}`, inline: true },
             { name: '\u200B', value: '\u200B' },
             { name: '<a:810231903826739220:862366009250545674> درصد علاقه به سکس', value: `${darsadsex}%`, inline: true },
-            { name: '<:853973900676038666:862366012045525052> شغل خانوم', value: `${shoghll}`, inline: true },
+            { name: ' شغل خانوم', value: `${shoghll}`, inline: true },
             { name: '\u200B', value: '\u200B' },
             { name: '📏 قـد خـانـوم', value: `${ghads}`, inline: true },
             { name: '🧭 وزن خانـوم', value: `${size} کـیلـوگـرم`, inline: true },
