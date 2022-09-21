@@ -23,7 +23,7 @@ module.exports = {
         var emojies = emoji[Math.floor(Math.random() * emoji.length)];
 
         interaction.followUp({
-            embdes: [
+            embeds: [
                 new MessageEmbed()
                     .setColor(config.color.blue)
                     .setDescription(`**دوست عزیز شما ${Math.floor(Math.random() * 100)}% لــز هستیـد ${emojies}**`)

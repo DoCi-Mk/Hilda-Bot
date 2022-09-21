@@ -3,7 +3,7 @@ const emoji = require('../../emoji')
 const config = require('../../config.json')
 
 module.exports = {
-    name: "haval",
+    name: "havalsanj",
     aliases: [],
     description: "درصد هول بودن شما ",
     cooldown: 2,
