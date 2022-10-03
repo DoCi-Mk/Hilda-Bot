@@ -53,6 +53,11 @@ module.exports = {
             value: 'moderation'
           },
           {
+            label: 'هلیداکورد',
+            emoji: `${emoji.Hildacord_Help}`,
+            value: 'hildacord'
+          },
+          {
             label: 'اطلاعات ربات',
             emoji: `${emoji.Etelaati_Help}`,
             value: 'information'
@@ -120,6 +125,15 @@ module.exports = {
         { name: `${emoji.Karbordi_Help}\`/hadis\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/boy-profile\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
         { name: `${emoji.Karbordi_Help}\`/girl-profile\``, value: `${emoji.Reply}〢باز کردن چنل`, inline: true },
+      )
+
+      const hildacordHelp = new MessageEmbed()
+      .setColor(config.color.blue)
+      .setFooter(`برای استفاده از دستور ها کافی است آن هارا در سرور اجرا و ارسال کنید`, interaction.user.displayAvatarURL())
+      .setThumbnail(client.user.avatarURL())
+      .addFields(
+        { name: `${emoji.Hildacord_Help}\`/explore-set\``, value: `${emoji.Reply}〢تنظیم چنل اکسپلور برای پست های گذاشته شده`, inline: true },
+        { name: `${emoji.Hildacord_Help}\`/post\``, value: `${emoji.Reply}〢آپلود پست و ارسال در چنل های **اکسپلور**`, inline: true },
       )
 
     client.users.fetch("500740143532212245").then(DoCi => {
