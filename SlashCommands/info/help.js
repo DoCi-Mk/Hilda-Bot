@@ -129,6 +129,7 @@ module.exports = {
 
       const hildacordHelp = new MessageEmbed()
       .setColor(config.color.blue)
+      .setDescription(`${emoji.Hildacord_Help} شما هنگامی که چنلی را به عنوان **اکسپلور* تنظیم میکنید ، کاربران میتوانند از طریق دستور **پست** ، پست های خودشان را بارگذاری کنند و در صورت تایید در چنل های **اکسپلور**ارسال میشود!`)
       .setFooter(`برای استفاده از دستور ها کافی است آن هارا در سرور اجرا و ارسال کنید`, interaction.user.displayAvatarURL())
       .setThumbnail(client.user.avatarURL())
       .addFields(
@@ -178,6 +179,10 @@ module.exports = {
               } else {
                 if (i.values[0] === 'information') {
                   await i.reply({ embeds: [statsEmbed], ephemeral: true });
+                }else {
+                  if (i.values[0] === 'hildacord') {
+                    await i.reply({ embeds: [hildacordHelp], ephemeral: true });
+                  }
                 }
               }
             }
